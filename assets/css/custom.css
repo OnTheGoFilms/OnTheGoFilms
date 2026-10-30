@@ -1,0 +1,2724 @@
+/*==================================================================
+  On The Go Films: site-specific fixes and sections
+  Loaded after main.css. Uses the template's theme variables so the
+  new blocks match the existing dark theme.
+    1. Works titles (orange hover-copy overlap fix)
+    2. Works thumbnails (label vs play button)
+    3. Hero (mobile / tablet)
+    4. Stats bar
+    5. Keyboard focus
+    6. Clients strip
+    7. Production Services section
+    8. Government of India Incentive section
+    9. Footer
+   10. CTAs (hero actions, CTA row/band, floating button)
+   11. Contact section
+   12. Enquiry form
+==================================================================*/
+
+/*------------------------------------------------------------------
+  1. Works titles
+  main.js wraps each word in .at-word. Each word clips its own orange
+  hover copy, so a title that wraps to two lines no longer shows the
+  copy on the next line, and words never break mid-word.
+------------------------------------------------------------------*/
+.at-title-text .at-word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  text-shadow: none;
+  translate: none;
+  transition: none;
+}
+.at-title-anim:hover .at-title-text .at-word {
+  text-shadow: none;
+  translate: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .at-title-anim:hover .at-title-text .char {
+    translate: none;
+    transition: none;
+  }
+}
+
+/*------------------------------------------------------------------
+  2. Works thumbnails
+  The big client label sat exactly under the play button, spilled out
+  of the image on phones and clashed with the artwork's own text. It
+  now sits in the clear top-left corner over a soft scrim.
+------------------------------------------------------------------*/
+.sec-4-home-11__list .sec-4-home-11__thumb-title {
+  top: clamp(12px, 2.5vw, 32px);
+  left: clamp(14px, 2.5vw, 36px);
+  transform: none;
+  max-width: 60%;
+  padding: 0;
+  font-size: clamp(14px, 2.2vw, 30px);
+  line-height: 1.15;
+  text-align: left;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+.sec-4-home-11__list .mg-portfolio-thumb > a::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 40%;
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), transparent);
+  pointer-events: none;
+}
+@media (max-width: 575px) {
+  .sec-4-home-11__list .mg-portfolio-thumb a > .position-absolute {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  .sec-4-home-11__list .mg-portfolio-thumb a > .position-absolute svg {
+    width: 18px;
+    height: 20px;
+  }
+}
+.sec-4-home-11__more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--at-neutral-500);
+}
+
+/*------------------------------------------------------------------
+  3. Header menu + hero
+------------------------------------------------------------------*/
+/* Keep the 7 header links on one line on every desktop width */
+@media (min-width: 1200px) {
+  .at-main-menu nav ul li a {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .at-main-menu nav ul li a {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+@media (max-width: 991.98px) {
+  /* Stack the three eyebrow labels instead of squeezing them into one row */
+  .sec-1-home-11__topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .sec-1-home-11__topbar-divider {
+    display: none;
+  }
+  /* The floating badge covered the headline on tablets */
+  .sec-1-home-11__badge {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  /* 64px minimum broke "GENERATION." mid-word on phones */
+  .sec-1-home-11__title {
+    font-size: clamp(40px, 14vw, 200px);
+  }
+  .sec-1-home-11__topbar-label {
+    font-size: 11px;
+  }
+}
+
+/*------------------------------------------------------------------
+  4. Stats bar
+------------------------------------------------------------------*/
+.sec-3-home-11__stat-num {
+  white-space: nowrap;
+}
+
+/*------------------------------------------------------------------
+  5. Keyboard focus (the template removes all focus outlines)
+------------------------------------------------------------------*/
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--at-theme-primary);
+  outline-offset: 3px;
+}
+/* Links that fill an overflow:hidden box would have their ring clipped: draw it inside */
+.sec-4-home-11__list .mg-portfolio-thumb > a:focus-visible {
+  outline: none;
+}
+.sec-4-home-11__list .mg-portfolio-thumb > a:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 3px solid var(--at-theme-primary);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.sec-4-home-11__list .cs-portfolio-title a:focus-visible,
+.at-offcanvas-menu a:focus-visible {
+  outline-offset: -3px;
+}
+
+/*------------------------------------------------------------------
+  6. Clients strip
+------------------------------------------------------------------*/
+.sec-clients__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 556px;
+}
+@media (min-width: 992px) {
+  .sec-clients__list {
+    margin-left: auto;
+  }
+}
+@media (max-width: 575px) {
+  .sec-clients__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* 3 tiles in 2 columns: let the CTA tile span the second row */
+  .sec-clients__list .sec-clients__item--cta {
+    grid-column: 1 / -1;
+    aspect-ratio: auto;
+    min-height: 96px;
+  }
+  .sec-clients__list .sec-clients__item--cta .sec-clients__cta {
+    min-height: 96px;
+  }
+}
+.sec-clients__item {
+  flex-direction: column;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  padding: 0 16px;
+  text-align: center;
+}
+.sec-clients__wordmark {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-clients__wordmark--lg {
+  font-size: 44px;
+  letter-spacing: -0.04em;
+}
+.sec-clients__meta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--at-neutral-500);
+  transition: color 0.3s ease;
+}
+.sec-clients__item--cta {
+  border-style: dashed;
+  padding: 0;
+}
+.sec-clients__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  text-decoration: none;
+}
+.sec-clients__cta:hover .sec-clients__meta {
+  color: var(--at-theme-primary);
+}
+
+/*------------------------------------------------------------------
+  Shared section chrome for the new sections (matches sec-4 / sec-5)
+------------------------------------------------------------------*/
+.sec-ps__container,
+.sec-inc__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+.sec-ps__title,
+.sec-inc__title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-950);
+}
+.sec-ps__intro,
+.sec-inc__intro {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+
+/*------------------------------------------------------------------
+  7. Production Services
+------------------------------------------------------------------*/
+.sec-ps {
+  position: relative;
+  background-color: var(--at-neutral-50);
+}
+.sec-ps__why {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: clamp(48px, 6vw, 80px) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--at-neutral-100);
+}
+.sec-ps__why-item {
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  border-right: 1px solid var(--at-neutral-100);
+  border-bottom: 1px solid var(--at-neutral-100);
+}
+.sec-ps__why-item:nth-child(3n) {
+  border-right: none;
+}
+@media (max-width: 991px) {
+  .sec-ps__why {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sec-ps__why-item:nth-child(3n) {
+    border-right: 1px solid var(--at-neutral-100);
+  }
+  .sec-ps__why-item:nth-child(2n) {
+    border-right: none;
+  }
+}
+@media (max-width: 575px) {
+  .sec-ps__why {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sec-ps__why-item,
+  .sec-ps__why-item:nth-child(3n) {
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.sec-ps__why-icon {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 26px;
+  color: var(--at-theme-primary);
+}
+.sec-ps__why-title {
+  margin-bottom: 8px;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-ps__why-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+.sec-ps__why-text a {
+  color: var(--at-theme-primary);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.sec-ps__subhead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin: clamp(56px, 7vw, 96px) 0 clamp(24px, 3vw, 36px);
+}
+.sec-ps__subhead-title {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-ps__subhead-note {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--at-neutral-500);
+}
+/* Tighter version of the existing service card for a 12-card grid */
+.sec-ps .sec-5-home-11__card--sm .sec-5-home-11__card-body {
+  padding: clamp(22px, 2.4vw, 32px);
+}
+.sec-ps .sec-5-home-11__card-num {
+  min-width: clamp(34px, 4vw, 46px);
+  font-size: clamp(26px, 3vw, 36px);
+  color: var(--at-neutral-300);
+}
+.sec-ps .sec-5-home-11__card-name {
+  font-size: clamp(17px, 1.5vw, 20px);
+}
+
+/*------------------------------------------------------------------
+  8. Government of India Incentive
+------------------------------------------------------------------*/
+.sec-inc {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--at-neutral-0);
+}
+.sec-inc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 15% 20%, rgba(240, 70, 14, 0.06) 0%, transparent 45%), radial-gradient(circle at 85% 75%, rgba(240, 70, 14, 0.04) 0%, transparent 50%);
+}
+.sec-inc__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+
+/* Headline figure */
+.sec-inc__big {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: clamp(28px, 3.5vw, 44px);
+  overflow: hidden;
+  border: 1px solid rgba(240, 70, 14, 0.35);
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(240, 70, 14, 0.16) 0%, rgba(240, 70, 14, 0.03) 60%), var(--at-common-white);
+}
+.sec-inc__big-pre {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--at-neutral-500);
+}
+.sec-inc__big-num {
+  margin: 8px 0 16px;
+  font-size: clamp(96px, 13vw, 190px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--at-theme-primary);
+}
+.sec-inc__big-num span {
+  font-size: 0.5em;
+  letter-spacing: -0.02em;
+}
+.sec-inc__big-sub {
+  max-width: 340px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--at-neutral-950);
+}
+
+/* Key facts */
+.sec-inc__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100%;
+  margin: 0;
+  border-top: 1px solid var(--at-neutral-100);
+}
+.sec-inc__fact {
+  padding: clamp(20px, 2.5vw, 32px) clamp(16px, 2vw, 28px);
+  border-bottom: 1px solid var(--at-neutral-100);
+}
+.sec-inc__fact:nth-child(odd) {
+  padding-left: 0;
+  border-right: 1px solid var(--at-neutral-100);
+}
+.sec-inc__fact dt {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--at-neutral-500);
+}
+.sec-inc__fact dd {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-inc__fact dd small {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--at-neutral-500);
+}
+@media (max-width: 575px) {
+  .sec-inc__facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sec-inc__fact,
+  .sec-inc__fact:nth-child(odd) {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: none;
+  }
+}
+
+/* Sub headings */
+.sec-inc__sub {
+  margin: clamp(56px, 7vw, 96px) 0 clamp(20px, 2.5vw, 32px);
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-inc__sub span {
+  font-size: 0.55em;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--at-neutral-500);
+}
+
+/* Cards: tiles, routes, lists, steps (same surface as the service cards) */
+.sec-inc__tile,
+.sec-inc__route,
+.sec-inc__list,
+.sec-inc__step {
+  position: relative;
+  height: 100%;
+  padding: clamp(24px, 3vw, 36px);
+  overflow: hidden;
+  border: 1px solid var(--at-neutral-100);
+  border-radius: 6px;
+  background-color: var(--at-common-white);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s ease;
+}
+.sec-inc__tile::before,
+.sec-inc__route::before,
+.sec-inc__step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--at-theme-primary);
+  transform: scaleY(0.3);
+  transform-origin: top;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.sec-inc__tile:hover,
+.sec-inc__route:hover,
+.sec-inc__step:hover {
+  transform: translateY(-4px);
+}
+.sec-inc__tile:hover::before,
+.sec-inc__route:hover::before,
+.sec-inc__step:hover::before {
+  transform: scaleY(1);
+}
+.sec-inc__tile-num {
+  display: block;
+  margin-bottom: 16px;
+  font-size: clamp(44px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--at-theme-primary);
+}
+.sec-inc__tile--base .sec-inc__tile-num {
+  color: var(--at-neutral-950);
+}
+.sec-inc__tile-title,
+.sec-inc__route-title,
+.sec-inc__list-title,
+.sec-inc__step-title {
+  margin: 0 0 8px;
+  font-size: clamp(17px, 1.6vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.sec-inc__route-rate {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--at-theme-primary);
+}
+
+/* Check / cross lists */
+.sec-inc__list-title {
+  margin-bottom: 12px;
+}
+.sec-inc__list ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+.sec-inc__list li {
+  position: relative;
+  padding: 12px 0 12px 30px;
+  border-bottom: 1px solid var(--at-neutral-100);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--at-neutral-950);
+}
+.sec-inc__list li:last-child {
+  border-bottom: none;
+}
+.sec-inc__list li i {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 16px;
+  color: var(--at-theme-primary);
+}
+.sec-inc__list--no li i {
+  color: var(--at-neutral-500);
+}
+.sec-inc__list-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--at-neutral-500);
+}
+
+/* Steps */
+.sec-inc__step-num {
+  display: block;
+  margin-bottom: 20px;
+  font-size: clamp(40px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-300);
+  transition: color 0.4s ease;
+}
+.sec-inc__step:hover .sec-inc__step-num {
+  color: var(--at-theme-primary);
+}
+
+/* CTA */
+.sec-inc__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: clamp(56px, 7vw, 96px);
+  padding: clamp(28px, 4vw, 56px);
+  border: 1px solid rgba(240, 70, 14, 0.3);
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(240, 70, 14, 0.14) 0%, rgba(240, 70, 14, 0.02) 70%), var(--at-common-white);
+}
+.sec-inc__cta-body {
+  flex: 1 1 480px;
+}
+.sec-inc__cta-body .sec-inc__text {
+  max-width: 720px;
+  font-size: 15px;
+}
+.sec-inc__cta-title {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--at-neutral-950);
+}
+.sec-inc__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+/* The template's dark pill disappeared on this panel: use the accent (dark text keeps AA contrast) */
+.sec-inc__cta .at-btn {
+  background-color: var(--at-theme-primary);
+  color: #0c0c0c;
+}
+.sec-inc__ext {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid currentColor;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--at-neutral-950);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.sec-inc__ext:hover {
+  color: var(--at-theme-primary);
+}
+.sec-inc__disclaimer {
+  max-width: 980px;
+  margin: 24px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+.sec-inc__disclaimer a {
+  color: inherit;
+}
+
+/*------------------------------------------------------------------
+  9. Footer
+------------------------------------------------------------------*/
+.footer-11__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: currentColor;
+}
+
+/*------------------------------------------------------------------
+  10. CTAs (hero actions, service CTA row, India-shoot band, floating)
+------------------------------------------------------------------*/
+/* Accent pill used for primary CTAs (dark text keeps AA contrast on orange) */
+.at-btn.otg-cta-primary {
+  background-color: var(--at-theme-primary);
+  color: #0c0c0c;
+}
+/* Labels are written in Title Case; stop the template capitalising every word ("Start A Project") */
+.at-btn.otg-cta-primary,
+.at-btn.otg-form__submit,
+.sec-inc__cta-actions .at-btn {
+  text-transform: none;
+}
+.sec-1-home-11__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+}
+.otg-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--at-neutral-100);
+}
+.otg-cta-row__text {
+  max-width: 560px;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--at-neutral-950);
+}
+.otg-cta-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(24px, 3.5vw, 44px);
+  border: 1px solid rgba(240, 70, 14, 0.3);
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(240, 70, 14, 0.14) 0%, rgba(240, 70, 14, 0.02) 70%), var(--at-common-white);
+}
+.otg-cta-band > div {
+  flex: 1 1 420px;
+}
+.otg-cta-band__title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--at-neutral-950);
+}
+.otg-cta-band__text {
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+
+/* Floating "Start a project" button (bottom-left, opposite back-to-top) */
+.otg-float-cta {
+  position: fixed;
+  left: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 1000; /* above the template's bottom blur strip (.px-blur-bottom, 999) */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #0c0c0c;
+  background-color: var(--at-theme-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+.otg-float-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.otg-float-cta:hover {
+  color: #0c0c0c;
+  transform: translateY(-2px);
+}
+.otg-float-cta i {
+  font-size: 15px;
+}
+/* Keep it out of the way (and out of the tab order) while a menu is open */
+body:has(.at-offcanvas.opened) .otg-float-cta,
+body:has(.at-offcanvas-2-area.menu-open) .otg-float-cta {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*------------------------------------------------------------------
+  11. Contact section
+------------------------------------------------------------------*/
+.sec-contact {
+  position: relative;
+  background-color: var(--at-neutral-50);
+}
+.sec-contact__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+.sec-contact__title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-950);
+}
+.sec-contact__intro {
+  max-width: 440px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+.sec-contact__next {
+  margin: clamp(32px, 4vw, 48px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--at-neutral-100);
+}
+.sec-contact__next li {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--at-neutral-100);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--at-neutral-500);
+}
+.sec-contact__next strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--at-neutral-950);
+}
+.sec-contact__next-num {
+  min-width: 28px;
+  padding-top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--at-theme-primary);
+}
+.sec-contact__direct {
+  margin-top: clamp(28px, 3.5vw, 40px);
+}
+.sec-contact__direct-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--at-neutral-500);
+}
+.sec-contact__direct-link,
+.sec-contact__direct-addr {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--at-neutral-950);
+  text-decoration: none;
+  word-break: break-word;
+}
+.sec-contact__direct-link:hover {
+  color: var(--at-theme-primary);
+}
+.sec-contact__direct-addr {
+  margin-top: 8px;
+  color: var(--at-neutral-500);
+}
+.sec-contact__direct i {
+  color: var(--at-theme-primary);
+}
+.sec-contact__card {
+  padding: clamp(24px, 4vw, 56px);
+  border: 1px solid var(--at-neutral-100);
+  border-radius: 6px;
+  background-color: var(--at-common-white);
+}
+
+/*------------------------------------------------------------------
+  12. Enquiry form (underline inputs, as in the template's forms)
+------------------------------------------------------------------*/
+.otg-form__field {
+  min-width: 0;
+  margin: 0 0 clamp(20px, 2.4vw, 28px);
+  padding: 0;
+  border: 0;
+}
+.otg-form__label {
+  display: block;
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--at-neutral-950);
+}
+.otg-form__req {
+  color: #ff6a33; /* 5.8:1 on the card */
+}
+.otg-form__opt {
+  font-weight: 400;
+  color: var(--at-neutral-500);
+}
+.otg-form__input {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 16px; /* 16px avoids iOS zoom on focus */
+  line-height: 1.5;
+  color: var(--at-neutral-950);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #757575; /* 3.6:1 on the card: the underline is the field's only edge */
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* main.css styles input[type=text|email|tel] (height 56px, 14px text), which beats a single class */
+.otg-form input.otg-form__input {
+  height: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--at-neutral-950);
+}
+.otg-form__input::placeholder {
+  color: var(--at-neutral-500);
+  opacity: 0.8;
+}
+.otg-form__input:focus,
+.otg-form__input:focus-visible,
+.otg-form input.otg-form__input:focus {
+  border-bottom-color: var(--at-theme-primary);
+  outline: none;
+  box-shadow: 0 1px 0 0 var(--at-theme-primary);
+}
+/* Invisible normally; drawn by Windows High Contrast, which drops box-shadow */
+.otg-form__input:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.otg-form__input:-webkit-autofill,
+.otg-form__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--at-neutral-950);
+  -webkit-box-shadow: 0 0 0 1000px var(--at-common-white) inset;
+  caret-color: var(--at-neutral-950);
+}
+.otg-form__select {
+  padding-right: 28px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B3B3B3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+}
+.otg-form__select option {
+  color: #f4f4f4;
+  background-color: #1e1e1e;
+}
+.otg-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.otg-form__hint,
+.otg-form__note {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--at-neutral-500);
+}
+.otg-form__note {
+  padding: 8px 12px;
+  border-left: 2px solid var(--at-theme-primary);
+  background: rgba(240, 70, 14, 0.08);
+  color: var(--at-neutral-950);
+}
+.otg-form__error {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ff8a65;
+}
+.otg-form__error[hidden] {
+  display: none;
+}
+.otg-form__error::before {
+  content: "!";
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0c0c0c;
+  background: #ff8a65;
+}
+.otg-form__field.is-invalid .otg-form__input {
+  border-bottom-color: #ff8a65;
+}
+.otg-form__hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* Enquiry-type chips */
+.otg-form__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+.otg-chip {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+.otg-chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.otg-chip span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid #6b6b6b; /* 3.1:1 on the card */
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--at-neutral-950);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.otg-chip:hover span {
+  border-color: var(--at-theme-primary);
+}
+.otg-chip input:checked + span {
+  border-color: var(--at-theme-primary);
+  background-color: var(--at-theme-primary);
+  color: #0c0c0c;
+  font-weight: 600;
+}
+.otg-chip input:focus-visible + span {
+  outline: 2px solid var(--at-theme-primary);
+  outline-offset: 3px;
+}
+.otg-form__field--chips.is-invalid .otg-chip span {
+  border-color: #ff8a65;
+}
+/* Windows High Contrast: keep the chosen chip distinguishable */
+@media (forced-colors: active) {
+  .otg-chip input:checked + span {
+    forced-color-adjust: none;
+    border-color: Highlight;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+/* 992-1199px: the form card is narrow, so stack its fields in one column */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .otg-form .col-md-6 {
+    width: 100%;
+  }
+}
+
+/* Checkboxes */
+.otg-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--at-neutral-950);
+  cursor: pointer;
+}
+.otg-check[hidden] {
+  display: none;
+}
+.otg-check input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--at-theme-primary);
+  cursor: pointer;
+}
+
+/* Actions */
+.otg-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 8px;
+}
+.at-btn.otg-form__submit {
+  border: 0;
+  cursor: pointer;
+  background-color: var(--at-theme-primary);
+  color: #0c0c0c;
+}
+.at-btn.otg-form__submit[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+.otg-form__privacy {
+  flex: 1 1 260px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--at-neutral-500);
+}
+
+/* Success / error states */
+.otg-form__alert {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--at-neutral-950);
+  outline: none;
+}
+.otg-form__alert[hidden] {
+  display: none;
+}
+.otg-form__alert--error {
+  border: 1px solid rgba(255, 138, 101, 0.5);
+  background: rgba(255, 138, 101, 0.08);
+}
+.otg-form__alert--error a {
+  color: #ff8a65; /* 6.3:1 on the tinted panel */
+  text-decoration: underline;
+}
+.otg-form__alert--success {
+  margin-top: 0;
+  padding: clamp(8px, 2vw, 24px) 0;
+  font-size: 16px;
+}
+.otg-form__alert-title {
+  margin: 0 0 6px;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.otg-form__alert--success .otg-form__alert-title {
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.otg-form__alert--success p {
+  color: var(--at-neutral-500);
+}
+.otg-form__success-icon {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 44px;
+  color: var(--at-theme-primary);
+}
+.otg-form__again {
+  margin-top: 8px;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+}
+
+/*==================================================================
+  MULTI-PAGE SITE (Oct 2026)
+   13. Header (fixed, every page) + phone menu + theme toggle
+   14. Page offsets below the fixed header
+   15. Home: intro, founder, closing CTA
+   16. Works: tabs + grid
+   17. Team: grid, hover bios, title band, bio modals
+   18. Offices (footer + contact)
+   19. Light-mode fixes for colours tuned for dark
+==================================================================*/
+
+/*------------------------------------------------------------------
+  13. Header
+------------------------------------------------------------------*/
+:root {
+  --otg-header-h: 88px;
+}
+@media (max-width: 991.98px) {
+  :root {
+    --otg-header-h: 68px;
+  }
+}
+.otg-skip {
+  position: fixed;
+  top: 12px;
+  left: -9999px;
+  z-index: 2000;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #0c0c0c;
+  background: var(--at-theme-primary);
+}
+.otg-skip:focus {
+  left: 12px;
+}
+.otg-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  height: var(--otg-header-h);
+  color: #fefefe;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.otg-header.is-solid,
+.otg-header.is-scrolled,
+.otg-header.is-menu-open {
+  background-color: rgba(12, 12, 12, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.otg-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 48px);
+}
+.otg-header__logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.otg-header__logo:hover {
+  color: inherit;
+}
+.otg-header__logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+@media (min-width: 1200px) {
+  .otg-header__logo-text {
+    font-size: 30px;
+  }
+}
+
+/* Desktop menu */
+.otg-nav {
+  display: none;
+}
+@media (min-width: 992px) {
+  .otg-nav {
+    display: block;
+  }
+}
+.otg-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.otg-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.88;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+@media (min-width: 1400px) {
+  .otg-nav__link {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+}
+.otg-nav__link:hover,
+.otg-nav__link.is-active {
+  color: var(--at-theme-primary);
+  opacity: 1;
+}
+.otg-nav__link i {
+  font-size: 13px;
+}
+.otg-nav__item--dd {
+  position: relative;
+}
+.otg-nav__sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 320px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: #161616;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.otg-nav__item--dd:hover .otg-nav__sub,
+.otg-nav__item--dd:focus-within .otg-nav__sub {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.otg-nav__sub a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #f4f4f4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.otg-nav__sub a:hover,
+.otg-nav__sub a:focus-visible {
+  color: #0c0c0c;
+  background: var(--at-theme-primary);
+}
+
+/* Header actions */
+.otg-header__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+}
+.otg-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  font-size: 18px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.otg-icon-btn:hover {
+  color: #0c0c0c;
+  border-color: var(--at-theme-primary);
+  background-color: var(--at-theme-primary);
+}
+.otg-theme-toggle__moon {
+  display: none;
+}
+[data-bs-theme=light] .otg-theme-toggle__sun {
+  display: none;
+}
+[data-bs-theme=light] .otg-theme-toggle__moon {
+  display: inline-block;
+}
+.otg-header__cta {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .otg-header__cta {
+    display: inline-flex;
+  }
+}
+.otg-burger {
+  display: inline-flex;
+}
+@media (min-width: 992px) {
+  .otg-burger {
+    display: none;
+  }
+}
+.otg-burger__lines {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 12px;
+}
+.otg-burger__lines span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease;
+}
+.otg-burger__lines span:nth-child(1) { top: 0; }
+.otg-burger__lines span:nth-child(2) { top: 5px; }
+.otg-burger__lines span:nth-child(3) { top: 10px; }
+.otg-burger[aria-expanded=true] .otg-burger__lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.otg-burger[aria-expanded=true] .otg-burger__lines span:nth-child(2) { opacity: 0; }
+.otg-burger[aria-expanded=true] .otg-burger__lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+/* Phone / tablet menu panel */
+.otg-mnav {
+  position: absolute;
+  top: var(--otg-header-h);
+  left: 0;
+  right: 0;
+  max-height: calc(100vh - var(--otg-header-h));
+  max-height: calc(100dvh - var(--otg-header-h));
+  overflow-y: auto;
+  padding: 12px clamp(16px, 3vw, 48px) 28px;
+  background: #0f0f0f;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.4);
+}
+.otg-mnav[hidden] {
+  display: none;
+}
+@media (min-width: 992px) {
+  .otg-mnav {
+    display: none !important;
+  }
+}
+.otg-mnav__list {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.otg-mnav__list > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.otg-mnav__link {
+  display: block;
+  padding: 14px 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+.otg-mnav__link.is-active,
+.otg-mnav__link:hover {
+  color: var(--at-theme-primary);
+}
+.otg-mnav__sub {
+  margin: -6px 0 12px;
+  padding: 0 0 0 14px;
+  list-style: none;
+  border-left: 2px solid var(--at-theme-primary);
+}
+.otg-mnav__sub a {
+  display: block;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+.otg-mnav__sub a:hover {
+  color: #f4f4f4;
+}
+.otg-mnav__cta {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Light theme: solid header turns light; over the dark home hero it stays white until scrolled */
+[data-bs-theme=light] .otg-header.is-solid,
+[data-bs-theme=light] .otg-header.is-scrolled,
+[data-bs-theme=light] .otg-header.is-menu-open {
+  color: #0f0f0f;
+  background-color: rgba(254, 254, 254, 0.92);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+[data-bs-theme=light] .otg-header.is-solid .otg-icon-btn,
+[data-bs-theme=light] .otg-header.is-scrolled .otg-icon-btn,
+[data-bs-theme=light] .otg-header.is-menu-open .otg-icon-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+[data-bs-theme=light] .otg-nav__sub {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: #fefefe;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+[data-bs-theme=light] .otg-nav__sub a {
+  color: #0f0f0f;
+}
+[data-bs-theme=light] .otg-mnav {
+  background: #fefefe;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.12);
+}
+[data-bs-theme=light] .otg-mnav__list > li {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-bs-theme=light] .otg-mnav__link {
+  color: #0f0f0f;
+}
+[data-bs-theme=light] .otg-mnav__sub a {
+  color: #585959;
+}
+
+/*------------------------------------------------------------------
+  14. Page offsets below the fixed header
+------------------------------------------------------------------*/
+.otg-page-head {
+  padding-top: var(--otg-header-h);
+}
+.otg-page-head > .sec-inc__container,
+.otg-page-head > .sec-contact__container,
+.otg-page-head > .otg-works__container,
+.otg-page-head > .otg-team__container {
+  padding-top: clamp(40px, 6vw, 88px);
+}
+.sec-3-home-11.otg-page-head {
+  padding-bottom: clamp(40px, 5vw, 72px);
+  background-color: var(--at-neutral-0);
+}
+.sec-3-home-11.otg-page-head > .container {
+  padding-top: clamp(40px, 6vw, 88px);
+}
+/* In-page anchors land below the header */
+html {
+  scroll-padding-top: var(--otg-header-h);
+}
+
+/*------------------------------------------------------------------
+  15. Home
+------------------------------------------------------------------*/
+.otg-home-intro {
+  padding: clamp(80px, 10vw, 140px) 0 clamp(56px, 7vw, 96px);
+  background-color: var(--at-neutral-0);
+}
+.otg-lead {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--at-neutral-950);
+}
+.otg-founder {
+  background-color: var(--at-neutral-50);
+}
+.otg-founder__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+.otg-founder__media {
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 4 / 5;
+  max-width: 520px;
+}
+.otg-founder__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.otg-founder__name {
+  font-size: clamp(30px, 3.8vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-950);
+}
+.otg-founder__role {
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--at-theme-primary);
+}
+.otg-founder__text {
+  max-width: 640px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.75;
+  color: var(--at-neutral-500);
+}
+.otg-cta-section {
+  background-color: var(--at-neutral-0);
+}
+.otg-cta-section__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(56px, 7vw, 96px) clamp(20px, 5.5vw, 96px);
+}
+.otg-cta-section .otg-cta-band {
+  margin-top: 0;
+}
+.sec-ps__intro--lead {
+  margin-bottom: 16px;
+  font-size: clamp(16px, 1.3vw, 19px);
+  color: var(--at-neutral-950);
+}
+/* Four client tiles (incl. "Your brand next") */
+@media (min-width: 576px) {
+  .sec-clients__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 680px;
+  }
+}
+
+/*------------------------------------------------------------------
+  16. Works
+------------------------------------------------------------------*/
+.otg-works {
+  background-color: var(--at-neutral-50);
+}
+.otg-works__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+.otg-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: clamp(32px, 4vw, 56px) 0 clamp(24px, 3vw, 36px);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--at-neutral-100);
+}
+.otg-tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #6b6b6b;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--at-neutral-950);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.otg-tabs__tab:hover {
+  border-color: var(--at-theme-primary);
+}
+.otg-tabs__tab[aria-selected=true] {
+  font-weight: 600;
+  color: #0c0c0c;
+  border-color: var(--at-theme-primary);
+  background-color: var(--at-theme-primary);
+}
+.otg-tabpanel[hidden] {
+  display: none;
+}
+.otg-tabpanel:focus-visible {
+  outline: 2px solid var(--at-theme-primary);
+  outline-offset: 8px;
+}
+.otg-tabpanel__note {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--at-neutral-500);
+}
+.otg-works__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 2.6vw, 36px) clamp(20px, 2.4vw, 32px);
+}
+@media (max-width: 991.98px) {
+  .otg-works__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575.98px) {
+  .otg-works__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.otg-work__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.otg-work__link:hover {
+  color: inherit;
+}
+.otg-work__thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  background-color: #000;
+}
+.otg-work__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops YouTube's letterbox bars */
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.otg-work__link:hover .otg-work__thumb img {
+  transform: scale(1.04);
+}
+.otg-work__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  padding-left: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.otg-work__link:hover .otg-work__play,
+.otg-work__link:focus-visible .otg-work__play {
+  color: #0c0c0c;
+  border-color: var(--at-theme-primary);
+  background: var(--at-theme-primary);
+}
+.otg-work__title {
+  margin: 14px 0 4px;
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--at-neutral-950);
+}
+.otg-work__meta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--at-neutral-500);
+}
+
+/*------------------------------------------------------------------
+  17. Team
+------------------------------------------------------------------*/
+.otg-team {
+  --otg-team-gap: clamp(20px, 2.4vw, 32px);
+  background-color: var(--at-neutral-0);
+}
+.otg-team__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+/* Compact moving title band between the two rows */
+.otg-team__band.sec-8-home-11__inner {
+  padding: 0 0 clamp(32px, 4vw, 56px);
+  text-align: left;
+}
+.otg-team__band-wrap {
+  margin-top: 12px;
+  overflow: hidden;
+}
+.otg-team__band-line.sec-8-home-11__big-line {
+  margin-left: 0;
+  font-size: clamp(36px, 6vw, 96px);
+  color: var(--at-neutral-950);
+}
+.otg-team__band-dot {
+  color: var(--at-theme-primary);
+}
+/* Bio modal */
+.otg-bio .modal-dialog {
+  max-width: min(960px, calc(100vw - 32px));
+}
+.otg-bio__content {
+  position: relative;
+  border: 1px solid var(--at-neutral-100);
+  border-radius: 8px;
+  color: var(--at-neutral-950);
+  background-color: var(--at-common-white);
+}
+.otg-bio__body {
+  padding: clamp(24px, 4vw, 48px);
+}
+.otg-bio__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #6b6b6b;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--at-neutral-950);
+  background: var(--at-common-white);
+  cursor: pointer;
+}
+.otg-bio__close:hover {
+  color: #0c0c0c;
+  border-color: var(--at-theme-primary);
+  background: var(--at-theme-primary);
+}
+.otg-bio__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.otg-bio__role {
+  margin: 0 0 6px;
+  padding-right: 48px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--at-theme-primary);
+}
+.otg-bio__name {
+  margin: 0 0 20px;
+  padding-right: 48px;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--at-neutral-950);
+}
+.otg-bio__body p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--at-neutral-500);
+}
+.otg-bio__subhead {
+  margin: 24px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--at-neutral-950);
+}
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+
+/*------------------------------------------------------------------
+  18. Offices
+------------------------------------------------------------------*/
+.otg-office + .otg-office {
+  margin-top: 18px;
+}
+.otg-office__city {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.otg-office__city i {
+  color: var(--at-theme-primary);
+}
+.otg-office__addr {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.otg-office__addr--pending {
+  font-style: italic;
+  opacity: 0.75;
+}
+.footer-11 .otg-office__city {
+  color: #fefefe;
+}
+.footer-11 .otg-office__addr {
+  color: #b7b7b7;
+}
+.sec-contact .otg-office__city {
+  color: var(--at-neutral-950);
+}
+.sec-contact .otg-office__addr {
+  color: var(--at-neutral-500);
+}
+.footer-11 h2.h6 {
+  font-size: 1rem;
+}
+
+/*------------------------------------------------------------------
+  19. Light-mode fixes
+------------------------------------------------------------------*/
+.otg-form__select option {
+  color: var(--at-neutral-950);
+  background-color: var(--at-common-white);
+}
+[data-bs-theme=light] .otg-form__error,
+[data-bs-theme=light] .otg-form__alert--error a {
+  color: #b23c17;
+}
+[data-bs-theme=light] .otg-form__error::before {
+  color: #fff;
+  background: #b23c17;
+}
+[data-bs-theme=light] .otg-form__field.is-invalid .otg-form__input,
+[data-bs-theme=light] .otg-form__field--chips.is-invalid .otg-chip span {
+  border-color: #b23c17;
+}
+[data-bs-theme=light] .otg-form__alert--error {
+  border-color: rgba(178, 60, 23, 0.4);
+  background: rgba(178, 60, 23, 0.06);
+}
+[data-bs-theme=light] .otg-form__req {
+  color: #b23c17;
+}
+[data-bs-theme=light] .otg-form__input {
+  border-bottom-color: #8a8a8a;
+}
+
+/* Sections built on the template's plain .container: match the other sections' width and side padding */
+.otg-home-intro > .container,
+.sec-3-home-11.otg-page-head > .container,
+.sec-clients > .container {
+  max-width: 1400px;
+  padding-left: clamp(20px, 5.5vw, 96px);
+  padding-right: clamp(20px, 5.5vw, 96px);
+}
+/* Footer: keep the brand name on one line, and the hours line at body size */
+.footer-11__brand .h4 {
+  font-size: clamp(22px, 1.8vw, 28px);
+  white-space: nowrap;
+}
+.footer-11 .footer-11__hours-value {
+  font-size: 14px;
+}
+
+/* Phones: fit logo + icons + menu button on one row */
+@media (max-width: 575.98px) {
+  .otg-header__inner {
+    gap: 10px;
+    padding: 0 20px;
+  }
+  .otg-header__logo {
+    gap: 8px;
+  }
+  .otg-header__logo-text {
+    font-size: 19px;
+  }
+  .otg-header__actions {
+    gap: 6px;
+  }
+  .otg-icon-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+.otg-mnav__social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+.otg-mnav__social i {
+  font-size: 18px;
+  color: var(--at-theme-primary);
+}
+[data-bs-theme=light] .otg-mnav__social {
+  color: #585959;
+}
+
+/*------------------------------------------------------------------
+  20. Review fixes (multi-page)
+------------------------------------------------------------------*/
+/* One content edge for header, sections and footer */
+.otg-header__inner {
+  max-width: 1400px;
+  padding-left: clamp(20px, 5.5vw, 96px);
+  padding-right: clamp(20px, 5.5vw, 96px);
+}
+@media (max-width: 575.98px) {
+  .otg-header__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.footer-11 > .container-2200 {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5.5vw, 96px) !important;
+  padding-right: clamp(20px, 5.5vw, 96px) !important;
+}
+/* Bigger logo wherever the desktop menu shows */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .otg-header__logo-text {
+    font-size: 25px;
+  }
+}
+/* Works dropdown: tap-to-open (touch) and Escape-to-dismiss states */
+.otg-nav__item--dd.is-open .otg-nav__sub {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.otg-nav__item--dd.is-dismissed .otg-nav__sub {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+}
+/* Skip-link / in-page targets receive focus without a ring */
+#main:focus,
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+/* Page titles start at the same height on every page */
+@media (min-width: 992px) {
+  .otg-page-head .row.align-items-end > :first-child {
+    align-self: flex-start;
+  }
+}
+/* About intro paragraph */
+.sec-3-home-11.otg-page-head .col-lg-5 > p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+@media (max-width: 991.98px) {
+  .sec-3-home-11.otg-page-head .col-lg-5 {
+    margin-top: 24px;
+  }
+}
+/* Bio modal centred on phones */
+.otg-bio .modal-dialog {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Client tiles: two per row on small laptops (four squeezed the tiles) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .sec-clients__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 340px;
+  }
+}
+/* Light theme: orange used as small text needs a darker shade for contrast */
+[data-bs-theme=light] .otg-header:is(.is-solid, .is-scrolled, .is-menu-open) .otg-nav__link:is(.is-active, :hover),
+[data-bs-theme=light] .otg-mnav__link.is-active,
+[data-bs-theme=light] .otg-mnav__link:hover,
+[data-bs-theme=light] .otg-founder__role,
+[data-bs-theme=light] .sec-ps__why-text a,
+[data-bs-theme=light] .sec-contact__next-num,
+[data-bs-theme=light] .otg-bio__role {
+  color: #b23c17;
+}
+[data-bs-theme=light] .otg-office__addr--pending {
+  opacity: 1;
+}
+
+/*------------------------------------------------------------------
+  21. October 2026 revisions (CREATV reference): home map, alliance,
+      team portraits, grouped works tabs, footer offices
+------------------------------------------------------------------*/
+/* Home: India & Japan map */
+.otg-hero-map {
+  background-color: var(--at-neutral-0);
+}
+.otg-hero-map__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 5.5vw, 96px) clamp(56px, 7vw, 96px);
+}
+.otg-map,
+.otg-map__art {
+  position: relative;
+}
+.otg-map__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+#otg-map-grid circle {
+  fill: rgba(150, 150, 150, 0.2);
+}
+.otg-map__land {
+  fill: none;
+  stroke: var(--at-theme-primary);
+  stroke-width: 3.6;
+  stroke-linecap: round;
+  animation: otg-map-in 1.2s ease-out both;
+}
+.otg-map__land--jp {
+  animation-delay: 0.25s;
+}
+.otg-map__arc {
+  fill: none;
+  stroke: var(--at-neutral-950);
+  stroke-opacity: 0.5;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 3 7;
+  animation: otg-map-dash 2.4s linear infinite;
+}
+@keyframes otg-map-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes otg-map-dash {
+  to { stroke-dashoffset: -20; }
+}
+.otg-map__pin,
+.otg-map__label {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+}
+.otg-map__pin {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border: 2px solid var(--at-neutral-0);
+  border-radius: 50%;
+  background: var(--at-neutral-950);
+  animation: otg-map-pulse 2.4s ease-out infinite;
+}
+@keyframes otg-map-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(240, 70, 14, 0.6); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(240, 70, 14, 0); }
+}
+.otg-map__pin-name {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  padding: 3px 9px;
+  border: 1px solid var(--at-neutral-100);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--at-neutral-950);
+  background: var(--at-neutral-0);
+  transform: translateY(-50%);
+}
+.otg-map__pin--below .otg-map__pin-name {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.otg-map__label {
+  padding-left: 0.3em;
+  font-size: clamp(13px, 2.1vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--at-neutral-950);
+  text-shadow: 0 0 6px var(--at-neutral-0), 0 0 18px var(--at-neutral-0);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.otg-hero-map__text {
+  max-width: 640px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.otg-hero-map__title {
+  text-wrap: balance;
+  font-size: clamp(34px, 3.6vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-950);
+}
+.otg-hero-map__sub {
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.6;
+  color: var(--at-neutral-500);
+}
+/* Wide screens: the text sits in the open space south of Japan */
+@media (min-width: 1200px) {
+  .otg-hero-map__text {
+    position: absolute;
+    right: 0;
+    bottom: 4%;
+    left: 46%;
+    max-width: none;
+    margin-top: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .otg-map__pin {
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+  }
+  .otg-map__pin-name {
+    left: 12px;
+    padding: 1px 6px;
+    font-size: 9px;
+  }
+  .otg-map__pin--below .otg-map__pin-name {
+    top: 13px;
+  }
+}
+
+/* Services: page title starts at the same height as on the other pages */
+.otg-page-head > .sec-ps__container {
+  padding-top: clamp(40px, 6vw, 88px);
+}
+
+/* Home: alliance intro, then the alliance line + pillars + closing line */
+.otg-alliance,
+.otg-pillars {
+  background-color: var(--at-neutral-50);
+}
+.otg-alliance__container,
+.otg-pillars__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 5.5vw, 96px);
+}
+.otg-alliance__title {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--at-neutral-950);
+}
+.otg-alliance__text p {
+  margin-bottom: 1.1em;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+.otg-alliance__text p:first-child {
+  color: var(--at-neutral-950);
+}
+.otg-pillars__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 64px);
+}
+@media (max-width: 767.98px) {
+  .otg-pillars__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.otg-pillar {
+  text-align: center;
+}
+.otg-pillar__title {
+  margin: 0 0 16px;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--at-theme-primary);
+}
+.otg-pillar__text {
+  max-width: 380px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--at-neutral-500);
+}
+.otg-closing {
+  margin-top: clamp(72px, 9vw, 128px);
+  text-align: center;
+}
+.otg-closing__lead {
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.5;
+  color: var(--at-neutral-950);
+}
+.otg-closing__big {
+  margin-top: 12px;
+  font-size: clamp(34px, 6.2vw, 100px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+.otg-closing__accent {
+  display: block;
+  color: var(--at-theme-primary);
+}
+.otg-closing__word {
+  display: block;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--at-neutral-950);
+}
+.otg-closing__cta {
+  margin-top: 28px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--at-neutral-500);
+}
+.otg-closing__cta a {
+  font-weight: 600;
+  color: var(--at-neutral-950);
+  text-decoration: underline;
+  text-decoration-color: var(--at-theme-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.otg-closing__cta a:hover {
+  color: var(--at-theme-primary);
+}
+.otg-closing--compact {
+  margin-top: clamp(56px, 7vw, 96px);
+}
+.otg-closing--compact .otg-closing__lead {
+  font-size: clamp(19px, 1.9vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.otg-closing--compact .otg-closing__cta {
+  margin-top: 14px;
+}
+
+/* Team: black-and-white portraits side by side, three per row, last row centred (CREATV pattern) */
+.otg-team__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.otg-member {
+  grid-column: span 2;
+}
+.otg-member:nth-child(3n + 1):nth-last-child(2) {
+  grid-column: 2 / span 2;
+}
+.otg-member:nth-child(3n + 1):last-child {
+  grid-column: 3 / span 2;
+}
+@media (max-width: 767.98px) {
+  .otg-team__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .otg-member,
+  .otg-member:nth-child(3n + 1):nth-last-child(2),
+  .otg-member:nth-child(3n + 1):last-child {
+    grid-column: span 2;
+  }
+  .otg-member:nth-child(odd):last-child {
+    grid-column: 2 / span 2;
+  }
+}
+.otg-member__card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 9 / 14;
+  border: 0;
+  font: inherit;
+  text-align: center;
+  color: #fff;
+  background: var(--at-neutral-100);
+  cursor: pointer;
+}
+.otg-member__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.otg-member__card:hover .otg-member__img {
+  transform: scale(1.03);
+}
+.otg-member__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(22px, 2.4vw, 34px) clamp(16px, 1.8vw, 26px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, rgba(12, 12, 12, 0.5) 0%, rgba(12, 12, 12, 0) 60%), linear-gradient(rgba(240, 70, 14, 0.62), rgba(240, 70, 14, 0.62));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.otg-member__card:hover .otg-member__overlay,
+.otg-member__card:focus-visible .otg-member__overlay {
+  opacity: 1;
+}
+.otg-member__card:focus-visible {
+  outline: 2px solid var(--at-theme-primary);
+  outline-offset: 3px;
+}
+.otg-member__role {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.otg-member__name {
+  margin-top: 6px;
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.otg-member__short {
+  margin-top: auto;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: justify;
+  hyphens: auto;
+}
+.otg-member__more {
+  margin-top: 18px;
+  padding: 9px 22px;
+  border: 1px solid #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.otg-member__card:hover .otg-member__more {
+  color: #0c0c0c;
+  background: #fff;
+}
+@media (max-width: 1199.98px) {
+  .otg-member__short {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    font-size: 13px;
+  }
+}
+@media (max-width: 991.98px) {
+  .otg-member__short {
+    display: none;
+  }
+}
+/* Touch screens have no hover: show name, role and the bio button on the photo */
+@media (hover: none) {
+  .otg-member__overlay {
+    justify-content: flex-end;
+    padding: 14px 12px;
+    background: linear-gradient(to top, rgba(12, 12, 12, 0.84) 0%, rgba(12, 12, 12, 0.64) 32%, rgba(12, 12, 12, 0) 62%);
+    opacity: 1;
+  }
+  .otg-member__short {
+    display: none;
+  }
+  .otg-member__name {
+    order: 1;
+    margin-top: 0;
+    font-size: clamp(13px, 3.6vw, 18px);
+  }
+  .otg-member__role {
+    order: 2;
+    margin-top: 4px;
+    font-size: clamp(10px, 2.6vw, 12px);
+    opacity: 0.85;
+  }
+  .otg-member__more {
+    order: 3;
+    margin-top: 10px;
+    padding: 6px 14px;
+    font-size: 10.5px;
+  }
+}
+.otg-bio__img {
+  object-position: 50% 20%;
+  filter: grayscale(1) contrast(1.05);
+}
+
+/* Works: country groups in the tab bar and the menu */
+.otg-tabs {
+  align-items: center;
+}
+.otg-tabs__group {
+  margin-right: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--at-neutral-500);
+}
+.otg-tabs__group:not(:first-child) {
+  margin-left: 14px;
+  padding-left: 22px;
+  border-left: 1px solid var(--at-neutral-100);
+}
+/* Up to tablet width each country starts its own row, so a country's tabs never split across rows */
+@media (max-width: 767.98px) {
+  .otg-tabs__group {
+    flex-basis: 100%;
+  }
+  .otg-tabs__group:not(:first-child) {
+    margin: 8px 0 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .otg-tabs {
+    gap: 8px;
+  }
+  .otg-tabs__tab {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+.otg-nav__sub {
+  min-width: 230px;
+}
+.otg-nav__sub-group {
+  padding: 10px 14px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+.otg-nav__sub-group:not(:first-child) {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+[data-bs-theme=light] .otg-nav__sub-group {
+  color: #6b6b6b;
+}
+[data-bs-theme=light] .otg-nav__sub-group:not(:first-child) {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Footer: the three offices side by side */
+@media (min-width: 768px) {
+  .footer-11 .otg-offices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px clamp(20px, 3vw, 40px);
+  }
+  .footer-11 .otg-office + .otg-office {
+    margin-top: 0;
+  }
+  .footer-11 .otg-office__addr {
+    font-size: 14px;
+  }
+}
+
+/* Phones: Instagram stays in the header (it is the only Instagram link), so tighten the row */
+@media (max-width: 419.98px) {
+  .otg-header__inner {
+    gap: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .otg-header__logo-text {
+    font-size: 17px;
+  }
+  .otg-header__actions {
+    gap: 4px;
+  }
+  .otg-icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .otg-map__land,
+  .otg-map__arc,
+  .otg-map__pin {
+    animation: none;
+  }
+}
+
+/*------------------------------------------------------------------
+  22. October 2026 revisions, round 2: wordmark-only logo, joined
+      alliance block, equal service boxes with orange highlights
+------------------------------------------------------------------*/
+/* Home: the alliance line now heads the Creative / Logistics / Finance block */
+.otg-pillars__container {
+  padding-top: 0;
+}
+.otg-pillars__lead {
+  max-width: 1000px;
+  margin: 0 auto clamp(48px, 6vw, 80px);
+  font-size: clamp(22px, 2.4vw, 34px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--at-theme-primary);
+}
+[data-bs-theme=light] .otg-pillars__lead {
+  color: #b23c17;
+}
+
+/* Services, What we handle: every box the same height, key phrases in orange */
+.otg-handle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: clamp(16px, 1.6vw, 24px);
+  margin: 0;
+}
+.otg-handle-grid > * {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1400px) {
+  .otg-handle-grid .sec-5-home-11__card-name {
+    min-height: calc(2.4em + 4px);
+  }
+}
+@media (max-width: 1399.98px) {
+  .otg-handle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767.98px) {
+  .otg-handle-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+  }
+}
+.otg-hl {
+  font-weight: 600;
+  color: var(--at-theme-primary);
+}
+[data-bs-theme=light] .otg-hl {
+  color: #b23c17;
+}
+.otg-handle-grid .sec-5-home-11__card-desc {
+  text-wrap: pretty;
+}
+.otg-closing__lead {
+  text-wrap: balance;
+}
+/* Team on touch screens: a faint edge so dark photos don't merge into the page */
+@media (hover: none) {
+  .otg-member__card {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+}
+/* Map on small phones: keep the INDIA label clear of the Mumbai pin */
+@media (max-width: 419.98px) {
+  .otg-map__label {
+    transform: translate(-50%, -15%);
+  }
+}
+
+/* Footer (always dark): visible divider, readable small text, offices 2 + 1 on tablets */
+.footer-11 .footer-11__bottom-inner {
+  border-top-color: rgba(254, 254, 254, 0.12);
+}
+.footer-11__copy,
+.footer-11__tagline {
+  line-height: 1.4;
+}
+.footer-11__brand p.neutral-400,
+.footer-11 h2.h6 {
+  color: #9a9a9a !important;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .footer-11 .otg-offices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 404: the page section fills the screen, so there is no colour band above the footer */
+.otg-404 {
+  min-height: 100svh; /* includes the header offset padding of .otg-page-head */
+}

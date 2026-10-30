@@ -1,0 +1,513 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <!-- prettier-ignore -->
+    <meta charset="UTF-8">
+    <!-- Theme: dark by default; remember the visitor's choice across pages (runs before paint, so no flash) -->
+    <script>
+        (function () { try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-bs-theme', 'light'); } catch (e) {} })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the producers, directors and production managers behind On The Go Films in India and Japan.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Our Team — The Storytellers Behind the Lens | On The Go Films</title>
+    <!-- Open Graph / social sharing -->
+    <!-- TODO before launch: set the live domain as absolute URLs in og:image, og:url, a canonical link and JSON-LD "url" -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="On The Go Films">
+    <meta property="og:title" content="Our Team — The Storytellers Behind the Lens | On The Go Films">
+    <meta property="og:description" content="Meet the producers, directors and production managers behind On The Go Films in India and Japan.">
+    <meta property="og:image" content="assets/imgs/pages/home-11/hns-active-cleanse-mv.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Favicon icon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/template/logo/favicon-camera-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/imgs/template/logo/favicon-camera-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/template/logo/apple-touch-icon.png">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="assets/css/vendors/carouselTicker.css">
+    <link rel="stylesheet" href="assets/css/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendors/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/vendors/nice-select.css">
+    <link rel="stylesheet" href="assets/css/vendors/font-awesome-pro.css">
+    <link rel="stylesheet" href="assets/css/vendors/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendors/odometer.css">
+    <link rel="stylesheet" href="assets/css/vendors/spacing.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Site-specific fixes and sections (loaded last so it overrides the template) -->
+    <link rel="stylesheet" href="assets/css/custom.css?v=20261030a">
+</head>
+
+<body class="at-magic-cursor page-team">
+    <a class="otg-skip" href="#main">Skip to content</a>
+
+    <!-- Persistent site header (fixed, visible on every page) -->
+    <header class="otg-header is-fixed is-solid" id="site-header">
+        <div class="otg-header__inner">
+            <a href="index.html" class="otg-header__logo" aria-label="On The Go Films, home">
+                <span class="otg-header__logo-text">On The Go Films</span>
+            </a>
+
+            <nav class="otg-nav" aria-label="Main">
+                <ul class="otg-nav__list">
+                    <li><a class="otg-nav__link" href="index.html">Home</a></li>
+                    <li><a class="otg-nav__link is-active" aria-current="page" href="team.html">Our Team</a></li>
+                    <li class="otg-nav__item--dd">
+                        <a class="otg-nav__link" href="works.html">Works <i class="fa-light fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="otg-nav__sub" aria-label="Works categories">
+                            <li class="otg-nav__sub-group" aria-hidden="true">India</li>
+                            <li><a href="works.html#india-long-formats"><span class="visually-hidden">India: </span>Long Formats</a></li>
+                            <li><a href="works.html#india-commercials"><span class="visually-hidden">India: </span>Commercials</a></li>
+                            <li class="otg-nav__sub-group" aria-hidden="true">Japan</li>
+                            <li><a href="works.html#japan-long-formats"><span class="visually-hidden">Japan: </span>Long Formats</a></li>
+                            <li><a href="works.html#japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="otg-nav__link" href="services.html">Services</a></li>
+                    <li><a class="otg-nav__link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="otg-header__actions">
+                <!-- Instagram profile URL: INSTAGRAM_URL in src/build.py -->
+                <a class="otg-icon-btn otg-header__insta" href="https://www.instagram.com/onthegofilms2026/" target="_blank" rel="noopener" aria-label="On The Go Films on Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <button class="otg-icon-btn otg-theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">
+                    <i class="fa-light fa-sun otg-theme-toggle__sun" aria-hidden="true"></i>
+                    <i class="fa-light fa-moon otg-theme-toggle__moon" aria-hidden="true"></i>
+                </button>
+                <a href="contact.html" class="at-btn at-btn-sm otg-cta-primary otg-header__cta" data-cta="header">
+                    <span>
+                        <span class="text-1">Let's Connect</span>
+                        <span class="text-2">Let's Connect</span>
+                    </span>
+                </a>
+                <button class="otg-icon-btn otg-burger" type="button" aria-expanded="false" aria-controls="otg-mnav" aria-label="Open menu">
+                    <span class="otg-burger__lines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Phone / tablet menu -->
+        <nav class="otg-mnav" id="otg-mnav" aria-label="Main" hidden>
+            <ul class="otg-mnav__list">
+                <li><a class="otg-mnav__link" href="index.html">Home</a></li>
+                <li><a class="otg-mnav__link is-active" aria-current="page" href="team.html">Our Team</a></li>
+                <li>
+                    <a class="otg-mnav__link" href="works.html">Works</a>
+                    <ul class="otg-mnav__sub">
+                        <li><a href="works.html#india-long-formats">India: Long Formats</a></li>
+                        <li><a href="works.html#india-commercials">India: Commercials</a></li>
+                        <li><a href="works.html#japan-long-formats">Japan: Long Formats</a></li>
+                        <li><a href="works.html#japan-shorts">Japan: Shorts</a></li>
+                    </ul>
+                </li>
+                <li><a class="otg-mnav__link" href="services.html">Services</a></li>
+                <li><a class="otg-mnav__link" href="contact.html">Contact Us</a></li>
+            </ul>
+            <a href="contact.html" class="at-btn otg-cta-primary otg-mnav__cta" data-cta="mobile-menu">
+                <span>
+                    <span class="text-1">Let's Connect</span>
+                    <span class="text-2">Let's Connect</span>
+                </span>
+            </a>
+        </nav>
+    </header>
+    <div class="px-blur-bottom"></div>
+    <!-- Begin magic cursor -->
+    <div id="magic-cursor" class="cursor-black-bg">
+        <div id="ball"></div>
+    </div>
+    <!-- End magic cursor -->
+    <div id="smooth-wrapper" class="is-fixed">
+        <div id="smooth-content">
+            <main class="bg-neutral-0" id="main" tabindex="-1">
+                <!-- Team: moving title band at the top, then the portrait grid (three per row; the last row is centred).
+                     Bios open in modals (team-modals.html). -->
+                <section class="otg-team otg-page-head" aria-labelledby="team-title">
+                    <h1 class="visually-hidden" id="team-title">Our team: the storytellers behind the lens</h1>
+                    <div class="otg-team__container">
+                        <div class="otg-team__band sec-8-home-11__inner">
+                            <div class="sec-5-home-11__eyebrow d-inline-flex align-items-center gap-2">
+                                <span class="sec-5-home-11__eyebrow-dot" aria-hidden="true"></span>
+                                <span class="sec-5-home-11__eyebrow-text text-uppercase">Meet our team</span>
+                            </div>
+                            <div class="sec-8-home-11__type-wrap otg-team__band-wrap" aria-hidden="true">
+                                <p class="sec-8-home-11__big-line otg-team__band-line mb-0">The Storytellers Behind the Lens &nbsp;<span class="otg-team__band-dot">&bull;</span>&nbsp; The Storytellers Behind the Lens &nbsp;<span class="otg-team__band-dot">&bull;</span>&nbsp; The Storytellers Behind the Lens &nbsp;<span class="otg-team__band-dot">&bull;</span>&nbsp; The Storytellers Behind the Lens</p>
+                            </div>
+                        </div>
+
+                        <div class="otg-team__grid">
+                            <article class="otg-member at_fade_anim" data-delay=".05">
+                                <h2 class="visually-hidden">Sohrab Khodamorad Bozorgchami, Producer</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-sohrab" aria-label="Read bio: Sohrab Khodamorad Bozorgchami">
+                                    <img class="otg-member__img" src="assets/imgs/team/sohrab.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Producer</span>
+                                        <span class="otg-member__name">Sohrab Khodamorad Bozorgchami</span>
+                                        <span class="otg-member__short">Nearly two decades in Indian film and advertising, from assistant director to line producer for leading commercial directors, and production leadership on Maidaan.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".10">
+                                <h2 class="visually-hidden">Himman Dhamija, Producer, Director &amp; Cinematographer</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-himman" aria-label="Read bio: Himman Dhamija">
+                                    <img class="otg-member__img" src="assets/imgs/team/himman.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Producer, Director &amp; Cinematographer</span>
+                                        <span class="otg-member__name">Himman Dhamija</span>
+                                        <span class="otg-member__short">The man, the legend. Director, producer and Director of Photography with over four decades of experience across international and Indian cinema.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".15">
+                                <h2 class="visually-hidden">Anshul Chauhan, Director &amp; Producer</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-anshul" aria-label="Read bio: Anshul Chauhan">
+                                    <img class="otg-member__img" src="assets/imgs/team/anshul.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Director &amp; Producer</span>
+                                        <span class="otg-member__name">Anshul Chauhan</span>
+                                        <span class="otg-member__short">Award-winning director and producer from Tokyo, Japan. Japan-based Anshul has joined forces with On The Go Films for a Japan–India production alliance.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".05">
+                                <h2 class="visually-hidden">Shivam Saxena, Line Producer</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-shivam" aria-label="Read bio: Shivam Saxena">
+                                    <img class="otg-member__img" src="assets/imgs/team/shivam.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Line Producer</span>
+                                        <span class="otg-member__name">Shivam Saxena</span>
+                                        <span class="otg-member__short">Line Producer and Production Fixer with over 10 years in Indian film and advertising, from location scouting and permits to crew, equipment and on-ground logistics.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".10">
+                                <h2 class="visually-hidden">Shashikant Singh, Unit Production Manager</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-shashikant" aria-label="Read bio: Shashikant Singh">
+                                    <img class="otg-member__img" src="assets/imgs/team/shashikant.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Unit Production Manager</span>
+                                        <span class="otg-member__name">Shashikant Singh</span>
+                                        <span class="otg-member__short">25+ years in film and advertising, with line production and logistics on more than five feature films and many commercial campaigns. Keeps schedules on time and budgets optimised.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".15">
+                                <h2 class="visually-hidden">Kaustubh Mungekar, Production Manager</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-kaustubh" aria-label="Read bio: Kaustubh Mungekar">
+                                    <img class="otg-member__img" src="assets/imgs/team/kaustubh.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Production Manager</span>
+                                        <span class="otg-member__name">Kaustubh Mungekar</span>
+                                        <span class="otg-member__short">Brings structure and clarity to high-stakes film and commercial shoots, from talent confirmations and location scouting to crew coordination, so every shoot wraps on schedule.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".05">
+                                <h2 class="visually-hidden">Shahab Shaikh, Transport Manager</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-shahab" aria-label="Read bio: Shahab Shaikh">
+                                    <img class="otg-member__img" src="assets/imgs/team/shahab.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Transport Manager</span>
+                                        <span class="otg-member__name">Shahab Shaikh</span>
+                                        <span class="otg-member__short">The driving force behind our production logistics, getting cast, crew and equipment exactly where they need to be, safely and on schedule.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                            <article class="otg-member at_fade_anim" data-delay=".10">
+                                <h2 class="visually-hidden">Trushal Mane, Head of Accounts &amp; Auditor</h2>
+                                <button class="otg-member__card" type="button" data-bs-toggle="modal" data-bs-target="#member-trushal" aria-label="Read bio: Trushal Mane">
+                                    <img class="otg-member__img" src="assets/imgs/team/trushal.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                                    <span class="otg-member__overlay" aria-hidden="true">
+                                        <span class="otg-member__role">Head of Accounts &amp; Auditor</span>
+                                        <span class="otg-member__name">Trushal Mane</span>
+                                        <span class="otg-member__short">The financial anchor behind our creative projects, from complex production budgets to rigorous financial audits.</span>
+                                        <span class="otg-member__more">Read bio</span>
+                                    </span>
+                                </button>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- Footer -->
+            <footer class="footer-11 changeless overflow-hidden" id="footer">
+                <div class="footer-11__bg" aria-hidden="true">
+                    <div class="footer-11__bg-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="container-2200 px-lg-5 px-3 position-relative">
+                    <div class="footer-11__mid py-5">
+                        <div class="row g-5 align-items-start">
+                            <!-- Brand -->
+                            <div class="col-12">
+                                <div class="footer-11__brand">
+                                    <a href="index.html" class="d-inline-flex align-items-center text-decoration-none mb-3">
+                                        <span class="h4 fw-700 text-white mb-0">On The Go Films</span>
+                                    </a>
+                                    <p class="neutral-400 fz-font-lg mb-4" style="max-width: 380px;">
+                                        Built for the fast forward generation.<br>
+                                        Driven by stories, powered by motion.
+                                    </p>
+                                    <p class="footer-11__contact-line mb-0">
+                                        <a href="mailto:Onthegofilmsfinance@gmail.com" class="text-white text-decoration-none">
+                                            <i class="fa-light fa-envelope me-2 text-white-50" aria-hidden="true"></i>Onthegofilmsfinance@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Offices -->
+                            <div class="col-12">
+                                <h2 class="h6 text-uppercase neutral-500 fw-600 mb-25">Our Offices</h2>
+                                <ul class="otg-offices list-unstyled mb-0">
+                                    <li class="otg-office">
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Tokyo, Japan</p>
+                                        <p class="otg-office__addr"><span class="d-block">14-504, Akatsuka Shinmachi 3-32,</span><span class="d-block">Itabashi-ku,</span><span class="d-block">Tokyo 175-0093, Japan</span></p>
+                                    </li>
+                                    <li class="otg-office">
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Mumbai, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">A-704, Vaishali Nagar, Saat Rasta,</span><span class="d-block">Mahalaxmi East, Mumbai – 400011,</span><span class="d-block">Maharashtra, India</span></p>
+                                    </li>
+                                    <li class="otg-office">
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Jaipur, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">92, Rajive Vihar, New Sanganer Road,</span><span class="d-block">Rajat Path, Mansarovar,</span><span class="d-block">Jaipur, Rajasthan, India</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom bar -->
+                    <div class="footer-11__bottom">
+                        <div class="footer-11__bottom-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
+                            <div class="d-flex flex-wrap align-items-center gap-3 gap-xxl-4">
+                                <span class="footer-11__copy">On The Go Films &copy; 2026. All rights reserved.</span>
+                                <span class="footer-11__tagline d-none d-sm-inline">Built for the fast forward generation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Team bio modals (outside the smooth-scroll wrapper so they stay fixed) -->
+    <div class="modal fade otg-bio" id="member-sohrab" tabindex="-1" aria-labelledby="member-sohrab-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/sohrab.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Producer</p>
+                            <h2 class="otg-bio__name" id="member-sohrab-title">Sohrab Khodamorad Bozorgchami</h2>
+                            <p>Sohrab was born in Mumbai in 1987 into a Zoroastrian family. His values were shaped by his father’s distinguished aviation career, which spanned Khambatta Airlines (one of India’s oldest aviation names), British Airways and, later, helping to establish Kingfisher Airlines alongside Vijay Mallya. Growing up in that high-standard environment instilled in him deep-rooted values of service, kindness, professional hard work and a spirit of adventure.</p>
+                            <p>Sohrab has nearly two decades of hands-on production experience in the Indian film and advertising industry. He began his journey as an assistant director and, from 2009 to 2017, worked alongside, assisted and line-produced for some of the country’s top commercial directors, including Sanjay Shetty, Nitesh Tiwari, Punit Malhotra, Suresh Triveni and Ashwiny Iyer Tiwari. He has since moved into long-format feature filmmaking, serving as part of the production leadership on major projects including <em>Maidaan</em> (directed by Amit Sharma).</p>
+                            <p>For Sohrab, On The Go Films is far more than a brand name. As a producer, he champions a collaborative production ecosystem where world-class creative vision meets seamless logistics, so every project is delivered with speed, integrity and cinematic excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-himman" tabindex="-1" aria-labelledby="member-himman-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/himman.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Producer, Director &amp; Cinematographer</p>
+                            <h2 class="otg-bio__name" id="member-himman-title">Himman Dhamija</h2>
+                            <p>Himman Dhamija is a multifaceted filmmaker, director, producer and acclaimed cinematographer with over four decades of experience across Indian feature films, commercial campaigns and digital series. His best-known work includes <em>Mangal Pandey</em>, <em>Bluffmaster</em>, <em>Roy</em> and <em>Kaalakaandi</em>, to name a few from a never-ending list.</p>
+                            <p>Having built his reputation on iconic, high-budget visual spectacles and nuanced drama, Himman brings a 360-degree creative vision to every project. His evolution from leading cinematographer to director and producer makes him a complete storyteller, combining sharp production instincts, dynamic visual direction and technical mastery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-anshul" tabindex="-1" aria-labelledby="member-anshul-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/anshul.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Director &amp; Producer</p>
+                            <h2 class="otg-bio__name" id="member-anshul-title">Anshul Chauhan</h2>
+                            <p>Anshul Chauhan was born in India. After attending military academy and graduating from MS University Vadodara with an Arts degree, he began working as an animator in 2006 at Paprikaas Studios (now Technicolor India), on Nickelodeon TV series such as <em>Farm Kids</em> and <em>Back at the Barnyard</em>. In 2008 he joined Crayon Pictures as an animator on the National Award-winning film <em>Delhi Safari</em>, and later became a team lead in Bangalore, overseeing production of the BBC TV series <em>Everything’s Rosie</em>.</p>
+                            <p>In 2011 he relocated to Tokyo, where he worked at Polygon Pictures on projects including Disney XD’s Emmy Award-winning <em>Tron: Uprising</em> and the <em>Transformers: Robots in Disguise</em> TV series.</p>
+                            <p>Anshul then pursued his passion for directing and producing. In 2017 he directed his first feature film, <em>Bad Poetry Tokyo</em>, which won the Grand Prix at the Brussels film festival and screened at many prestigious festivals, including Raindance. His second feature, <em>Kontora</em> (2019), received the Grand Prix at the Tallinn Black Nights Film Festival, along with multiple awards and critical acclaim at international festivals, including the prestigious Obayashi Award in 2020.</p>
+                            <p>In 2021 Anshul directed and produced <em>December</em>, a courtroom drama that premiered at the Busan International Film Festival and was nominated for the Kim Ji-seok Award in 2022. The film screened at festivals around the world and had a successful theatrical run in Japan, with releases in Spain, Germany, South Korea and other countries. His latest Japanese feature, <em>Tiger</em>, is to be released soon.</p>
+                            <p>Anshul is in early development on his debut Hollywood project, an MMA sports drama set in Las Vegas, in collaboration with CAA and Radical Media. He is also working on a new Japan–Taiwan project, recently selected for development by TCCF/TAICCA Taiwan and TTB Italy. Having recently finished shooting a documentary as director, producer and DoP, Anshul continues to push artistic boundaries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-shivam" tabindex="-1" aria-labelledby="member-shivam-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/shivam.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Line Producer</p>
+                            <h2 class="otg-bio__name" id="member-shivam-title">Shivam Saxena</h2>
+                            <p>Shivam Saxena is an experienced Line Producer and Production Fixer with over 10 years of experience in the Indian film and advertising production industry.</p>
+                            <p>He specialises in end-to-end production support, location scouting, permits and permissions, local crew coordination, equipment rentals, accommodation, transportation and on-ground logistics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-shashikant" tabindex="-1" aria-labelledby="member-shashikant-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/shashikant.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Unit Production Manager</p>
+                            <h2 class="otg-bio__name" id="member-shashikant-title">Shashikant Singh</h2>
+                            <p>With over 25 years of hands-on experience in the film and advertising industry, Shashikant Singh is the operational backbone of our production services. Having managed line production and logistics on more than five feature films and a vast array of commercial campaigns, he brings an unmatched level of technical foresight, structural efficiency and industry expertise to every set.</p>
+                            <p>Shashikant excels at seamless set management, ensuring shoot schedules run strictly on time, budgets are optimised and workflows remain frictionless. His deep-rooted industry network, sharp problem-solving and unwavering dedication make him an invaluable leader on set and a trusted partner for creators, directors and crew alike.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-kaustubh" tabindex="-1" aria-labelledby="member-kaustubh-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/kaustubh.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Production Manager</p>
+                            <h2 class="otg-bio__name" id="member-kaustubh-title">Kaustubh Mungekar</h2>
+                            <p>Kaustubh Mungekar is an energetic Production Manager known for bringing structure and operational clarity to high-stakes film and commercial projects. Kaustubh handles the heavy lifting of logistics, overseeing talent confirmations, location scouting and crew coordination with speed and precision.</p>
+                            <p>Adept at communicating between agencies, heads of department and ground crews, he ensures every shoot wraps on schedule without compromising creative output.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-shahab" tabindex="-1" aria-labelledby="member-shahab-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/shahab.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Transport Manager</p>
+                            <h2 class="otg-bio__name" id="member-shahab-title">Shahab Shaikh</h2>
+                            <p>As our dedicated Transport Manager, Shahab Shaikh is the driving force behind our production logistics. With extensive experience navigating the fast-paced demands of film sets, he ensures that our cast, crew and equipment get exactly where they need to be, safely and on schedule.</p>
+                            <p>From complex multi-city outdoor shoots to daily studio setups, his meticulous planning and calm problem-solving skills keep our productions moving forward without a hitch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade otg-bio" id="member-trushal" tabindex="-1" aria-labelledby="member-trushal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content otg-bio__content">
+                <button type="button" class="otg-bio__close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-light fa-xmark" aria-hidden="true"></i></button>
+                <div class="modal-body otg-bio__body">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-md-5">
+                            <img class="otg-bio__img" src="assets/imgs/team/trushal.jpg" alt="" width="720" height="1120" loading="lazy" decoding="async">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="otg-bio__role">Head of Accounts &amp; Auditor</p>
+                            <h2 class="otg-bio__name" id="member-trushal-title">Trushal Mane</h2>
+                            <p>Trushal Mane, our Head of Accounts and Auditor, is the financial anchor behind our creative projects, managing everything from complex production budgets to rigorous financial audits.</p>
+                            <p>With meticulous attention to detail and sound fiscal strategy, he ensures our resources are maximised and every production stays strictly on budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- back to top start -->
+    <div class="back-to-top-wrapper">
+        <button id="back_to_top" type="button" class="back-to-top-btn" aria-label="Back to top">
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+    <!-- back to top end -->
+    <!-- Libs JS -->
+    <script src="assets/js/vendors/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/vendors/plugin.js"></script>
+    <script src="assets/js/vendors/bootstrap.min.js"></script>
+    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendors/jquery.carouselTicker.min.js"></script>
+    <script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/vendors/jquery.odometer.min.js"></script>
+    <script src="assets/js/vendors/jquery.appear.js"></script>
+    <script src="assets/js/vendors/jquery.elevatezoom.js"></script>
+    <script src="assets/js/vendors/nice-select.js"></script>
+    <script src="assets/js/vendors/parallax.js"></script>
+    <script src="assets/js/vendors/ripple-2.js"></script>
+    <script src="assets/js/vendors/imagesloaded-pkgd.js"></script>
+    <script src="assets/js/vendors/isotope.pkgd.min.js"></script>
+    <script src="assets/js/vendors/image-hover-effects.js"></script>
+    <script src="assets/js/at-cursor.js"></script>
+    <script src="assets/js/main.js?v=20261030a"></script>
+    <script src="assets/js/site.js?v=20261030a"></script>
+
+</body>
+
+</html>

@@ -6,19 +6,22 @@
     <meta charset="UTF-8">
     <!-- Theme: dark by default; remember the visitor's choice across pages (runs before paint, so no flash) -->
     <script>
-        (function () { try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-bs-theme', 'light'); } catch (e) {} })();
+        (function () { try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-bs-theme', 'light'); } catch (e) { } })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Feature films, series and commercials from India, and feature films and short films from Japan.">
+    <meta name="description"
+        content="Feature films, series and commercials from India, and feature films and short films from Japan.">
     <meta name="theme-color" content="#0F0F0F">
     <title>Works — Long Formats, Commercials &amp; Shorts from India and Japan | On The Go Films</title>
     <!-- Open Graph / social sharing -->
     <!-- TODO before launch: set the live domain as absolute URLs in og:image, og:url, a canonical link and JSON-LD "url" -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="On The Go Films">
-    <meta property="og:title" content="Works — Long Formats, Commercials &amp; Shorts from India and Japan | On The Go Films">
-    <meta property="og:description" content="Feature films, series and commercials from India, and feature films and short films from Japan.">
-    <meta property="og:image" content="assets/imgs/pages/home-11/hns-active-cleanse-mv.jpg">
+    <meta property="og:title"
+        content="Works — Long Formats, Commercials &amp; Shorts from India and Japan | On The Go Films">
+    <meta property="og:description"
+        content="Feature films, series and commercials from India, and feature films and short films from Japan.">
+    <meta property="og:image" content="assets/imgs/og.png">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon icon-->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/template/logo/favicon-camera-32.png">
@@ -56,14 +59,19 @@
                     <li><a class="otg-nav__link" href="index.html">Home</a></li>
                     <li><a class="otg-nav__link" href="team.html">Our Team</a></li>
                     <li class="otg-nav__item--dd">
-                        <a class="otg-nav__link is-active" aria-current="page" href="works.html">Works <i class="fa-light fa-angle-down" aria-hidden="true"></i></a>
+                        <a class="otg-nav__link is-active" aria-current="page" href="works.html">Works <i
+                                class="fa-light fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="otg-nav__sub" aria-label="Works categories">
                             <li class="otg-nav__sub-group" aria-hidden="true">India</li>
-                            <li><a href="works.html#india-long-formats"><span class="visually-hidden">India: </span>Long Formats</a></li>
-                            <li><a href="works.html#india-commercials"><span class="visually-hidden">India: </span>Commercials</a></li>
+                            <li><a href="works.html#india-long-formats"><span class="visually-hidden">India: </span>Long
+                                    Formats</a></li>
+                            <li><a href="works.html#india-commercials"><span class="visually-hidden">India:
+                                    </span>Commercials</a></li>
                             <li class="otg-nav__sub-group" aria-hidden="true">Japan</li>
-                            <li><a href="works.html#japan-long-formats"><span class="visually-hidden">Japan: </span>Long Formats</a></li>
-                            <li><a href="works.html#japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</a></li>
+                            <li><a href="works.html#japan-long-formats"><span class="visually-hidden">Japan: </span>Long
+                                    Formats</a></li>
+                            <li><a href="works.html#japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="otg-nav__link" href="services.html">Services</a></li>
@@ -73,10 +81,12 @@
 
             <div class="otg-header__actions">
                 <!-- Instagram profile URL: INSTAGRAM_URL in src/build.py -->
-                <a class="otg-icon-btn otg-header__insta" href="https://www.instagram.com/onthegofilms2026/" target="_blank" rel="noopener" aria-label="On The Go Films on Instagram">
+                <a class="otg-icon-btn otg-header__insta" href="https://www.instagram.com/onthegofilms2026/"
+                    target="_blank" rel="noopener" aria-label="On The Go Films on Instagram">
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
-                <button class="otg-icon-btn otg-theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <button class="otg-icon-btn otg-theme-toggle" type="button" data-theme-toggle
+                    aria-label="Switch to light mode">
                     <i class="fa-light fa-sun otg-theme-toggle__sun" aria-hidden="true"></i>
                     <i class="fa-light fa-moon otg-theme-toggle__moon" aria-hidden="true"></i>
                 </button>
@@ -86,7 +96,8 @@
                         <span class="text-2">Let's Connect</span>
                     </span>
                 </a>
-                <button class="otg-icon-btn otg-burger" type="button" aria-expanded="false" aria-controls="otg-mnav" aria-label="Open menu">
+                <button class="otg-icon-btn otg-burger" type="button" aria-expanded="false" aria-controls="otg-mnav"
+                    aria-label="Open menu">
                     <span class="otg-burger__lines" aria-hidden="true"><span></span><span></span><span></span></span>
                 </button>
             </div>
@@ -141,118 +152,191 @@
                                 </h1>
                             </div>
                             <div class="col-xl-4 col-lg-5">
-                                <p class="sec-4-home-11__intro mb-0">Long formats and commercials from India, and feature films and shorts from Japan.</p>
+                                <p class="sec-4-home-11__intro mb-0">Long formats and commercials from India, and
+                                    feature films and shorts from Japan.</p>
                             </div>
                         </header>
 
                         <div class="otg-tabs" role="tablist" aria-label="Work categories">
                             <span class="otg-tabs__group" aria-hidden="true">India</span>
-                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-india-long-formats" aria-controls="india-long-formats" aria-selected="true" data-tab="india-long-formats"><span class="visually-hidden">India: </span>Long Formats</button>
-                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-india-commercials" aria-controls="india-commercials" aria-selected="false" tabindex="-1" data-tab="india-commercials"><span class="visually-hidden">India: </span>Commercials</button>
+                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-india-long-formats"
+                                aria-controls="india-long-formats" aria-selected="true"
+                                data-tab="india-long-formats"><span class="visually-hidden">India: </span>Long
+                                Formats</button>
+                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-india-commercials"
+                                aria-controls="india-commercials" aria-selected="false" tabindex="-1"
+                                data-tab="india-commercials"><span class="visually-hidden">India:
+                                </span>Commercials</button>
                             <span class="otg-tabs__group" aria-hidden="true">Japan</span>
-                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-japan-long-formats" aria-controls="japan-long-formats" aria-selected="false" tabindex="-1" data-tab="japan-long-formats"><span class="visually-hidden">Japan: </span>Long Formats</button>
-                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-japan-shorts" aria-controls="japan-shorts" aria-selected="false" tabindex="-1" data-tab="japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</button>
+                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-japan-long-formats"
+                                aria-controls="japan-long-formats" aria-selected="false" tabindex="-1"
+                                data-tab="japan-long-formats"><span class="visually-hidden">Japan: </span>Long
+                                Formats</button>
+                            <button class="otg-tabs__tab" type="button" role="tab" id="tab-japan-shorts"
+                                aria-controls="japan-shorts" aria-selected="false" tabindex="-1"
+                                data-tab="japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</button>
                         </div>
 
-                        <div class="otg-tabpanel" role="tabpanel" id="india-long-formats" aria-labelledby="tab-india-long-formats" tabindex="0">
+                        <div class="otg-tabpanel" role="tabpanel" id="india-long-formats"
+                            aria-labelledby="tab-india-long-formats" tabindex="0">
                             <h2 class="visually-hidden">India: Long Formats</h2>
-                            <p class="otg-tabpanel__note">Feature films and series that members of our team have worked on.</p>
+                            <p class="otg-tabpanel__note">Feature films and series that members of our team have worked
+                                on.</p>
                             <div class="otg-works__grid">
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=kDzAKXNnAVA" aria-label="Play video: Maidaan">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=kDzAKXNnAVA"
+                                        aria-label="Play video: Maidaan">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/kDzAKXNnAVA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/kDzAKXNnAVA/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Maidaan</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=hJL9MdogzTk" aria-label="Play video: Sumo Didi">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=hJL9MdogzTk"
+                                        aria-label="Play video: Sumo Didi">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/hJL9MdogzTk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/hJL9MdogzTk/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Sumo Didi</h3>
                                         <p class="otg-work__meta">Feature film · ZEE5 Original · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=YEv0zokK140" aria-label="Play video: Happy Patel: Khatarnak Jasoos">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=YEv0zokK140"
+                                        aria-label="Play video: Happy Patel: Khatarnak Jasoos">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/YEv0zokK140/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/YEv0zokK140/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Happy Patel: Khatarnak Jasoos</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=y9_T-thkm8U" aria-label="Play video: Chup">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=y9_T-thkm8U"
+                                        aria-label="Play video: Chup">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/y9_T-thkm8U/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/y9_T-thkm8U/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Chup</h3>
                                         <p class="otg-work__meta">Feature film · Full film</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=EoC3IvGo_XU" aria-label="Play video: UP65">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=EoC3IvGo_XU"
+                                        aria-label="Play video: UP65">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/EoC3IvGo_XU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/EoC3IvGo_XU/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">UP65</h3>
                                         <p class="otg-work__meta">Drama series · JioCinema · Promo</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=7AaUBhs1L1g" aria-label="Play video: Bandwaale">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=7AaUBhs1L1g"
+                                        aria-label="Play video: Bandwaale">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/7AaUBhs1L1g/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/7AaUBhs1L1g/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Bandwaale</h3>
                                         <p class="otg-work__meta">Drama series · Prime Video · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=e3ftPr2YFV8" aria-label="Play video: Kaalakaandi">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=e3ftPr2YFV8"
+                                        aria-label="Play video: Kaalakaandi">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/e3ftPr2YFV8/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/e3ftPr2YFV8/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Kaalakaandi</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=uShGv52y6no" aria-label="Play video: Babli Bouncer">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=uShGv52y6no"
+                                        aria-label="Play video: Babli Bouncer">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/uShGv52y6no/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/uShGv52y6no/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Babli Bouncer</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=aYXNMaBQrwU" aria-label="Play video: Mubarakan">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=aYXNMaBQrwU"
+                                        aria-label="Play video: Mubarakan">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/aYXNMaBQrwU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/aYXNMaBQrwU/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Mubarakan</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=ahz3kTiGo3s" aria-label="Play video: Roy">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=ahz3kTiGo3s" aria-label="Play video: Roy">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/ahz3kTiGo3s/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/ahz3kTiGo3s/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Roy</h3>
                                         <p class="otg-work__meta">Feature film · Trailer</p>
@@ -261,165 +345,266 @@
                             </div>
                         </div>
 
-                        <div class="otg-tabpanel" role="tabpanel" id="india-commercials" aria-labelledby="tab-india-commercials" tabindex="0" hidden>
+                        <div class="otg-tabpanel" role="tabpanel" id="india-commercials"
+                            aria-labelledby="tab-india-commercials" tabindex="0" hidden>
                             <h2 class="visually-hidden">India: Commercials</h2>
-                            <p class="otg-tabpanel__note">Commercials, promos and branded content for TV and digital.</p>
+                            <p class="otg-tabpanel__note">Commercials, promos and branded content for TV and digital.
+                            </p>
                             <div class="otg-works__grid">
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=EtEvS__IoMs" aria-label="Play video: JioHotstar: Obsession, Premiere Promo">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=EtEvS__IoMs"
+                                        aria-label="Play video: JioHotstar: Obsession, Premiere Promo">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/EtEvS__IoMs/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/EtEvS__IoMs/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">JioHotstar: Obsession, Premiere Promo</h3>
                                         <p class="otg-work__meta">Digital promo · Varun Dhawan &amp; Kriti Sanon</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=ouplj3yud-Y" aria-label="Play video: JioHotstar: Obsession, Announcement">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=ouplj3yud-Y"
+                                        aria-label="Play video: JioHotstar: Obsession, Announcement">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/ouplj3yud-Y/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/ouplj3yud-Y/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">JioHotstar: Obsession, Announcement</h3>
                                         <p class="otg-work__meta">Digital promo · Varun Dhawan &amp; Kriti Sanon</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=wjisVJxKC3Q" aria-label="Play video: DHFL: Shah Rukh Khan">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=wjisVJxKC3Q"
+                                        aria-label="Play video: DHFL: Shah Rukh Khan">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/wjisVJxKC3Q/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/wjisVJxKC3Q/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">DHFL: Shah Rukh Khan</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=dH8AsDbnVkQ" aria-label="Play video: CEAT">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=dH8AsDbnVkQ"
+                                        aria-label="Play video: CEAT">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/dH8AsDbnVkQ/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/dH8AsDbnVkQ/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">CEAT</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=o343zugBWwM" aria-label="Play video: Olay: Kalki">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=o343zugBWwM"
+                                        aria-label="Play video: Olay: Kalki">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/o343zugBWwM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/o343zugBWwM/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Olay: Kalki</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=vaHe7v3ngIk" aria-label="Play video: Incredible India: Mumbai">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=vaHe7v3ngIk"
+                                        aria-label="Play video: Incredible India: Mumbai">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/vaHe7v3ngIk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/vaHe7v3ngIk/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Incredible India: Mumbai</h3>
                                         <p class="otg-work__meta">Tourism campaign</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=Rp0806KdzZ0" aria-label="Play video: Star Sports: Rio Olympics 2016, Women&#x27;s Hockey Team">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=Rp0806KdzZ0"
+                                        aria-label="Play video: Star Sports: Rio Olympics 2016, Women&#x27;s Hockey Team">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/Rp0806KdzZ0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/Rp0806KdzZ0/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
-                                        <h3 class="otg-work__title">Star Sports: Rio Olympics 2016, Women&#x27;s Hockey Team</h3>
+                                        <h3 class="otg-work__title">Star Sports: Rio Olympics 2016, Women&#x27;s Hockey
+                                            Team</h3>
                                         <p class="otg-work__meta">TV promo</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=9tmMmJlFaCU" aria-label="Play video: KBC: Loud Speaker">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=9tmMmJlFaCU"
+                                        aria-label="Play video: KBC: Loud Speaker">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/9tmMmJlFaCU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/9tmMmJlFaCU/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">KBC: Loud Speaker</h3>
                                         <p class="otg-work__meta">TV promo</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=fWWK6MZnGLY" aria-label="Play video: Star Sports: Join the Saina Squad">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=fWWK6MZnGLY"
+                                        aria-label="Play video: Star Sports: Join the Saina Squad">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/fWWK6MZnGLY/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/fWWK6MZnGLY/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Star Sports: Join the Saina Squad</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=_DUT6OGnPbg" aria-label="Play video: Indian Idol: Mast Mast Do Nain">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=_DUT6OGnPbg"
+                                        aria-label="Play video: Indian Idol: Mast Mast Do Nain">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/_DUT6OGnPbg/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/_DUT6OGnPbg/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Indian Idol: Mast Mast Do Nain</h3>
                                         <p class="otg-work__meta">TV promo</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=bv-iFhUf8mw" aria-label="Play video: Vicks Action 500 + VVR">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=bv-iFhUf8mw"
+                                        aria-label="Play video: Vicks Action 500 + VVR">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/bv-iFhUf8mw/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/bv-iFhUf8mw/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Vicks Action 500 + VVR</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=Ld3M9yvqA6Q" aria-label="Play video: Limca: Kareena">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=Ld3M9yvqA6Q"
+                                        aria-label="Play video: Limca: Kareena">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/Ld3M9yvqA6Q/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/Ld3M9yvqA6Q/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Limca: Kareena</h3>
                                         <p class="otg-work__meta">TV commercial</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=6KeQHhVijj4" aria-label="Play video: Head &amp; Shoulders Active Cleanse: Dating Show">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=6KeQHhVijj4"
+                                        aria-label="Play video: Head &amp; Shoulders Active Cleanse: Dating Show">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/6KeQHhVijj4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/6KeQHhVijj4/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
-                                        <h3 class="otg-work__title">Head &amp; Shoulders Active Cleanse: Dating Show</h3>
+                                        <h3 class="otg-work__title">Head &amp; Shoulders Active Cleanse: Dating Show
+                                        </h3>
                                         <p class="otg-work__meta">TV commercial · 20s · Hindi</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=cwgK9E8ZNSE" aria-label="Play video: Head &amp; Shoulders Active Cleanse">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=cwgK9E8ZNSE"
+                                        aria-label="Play video: Head &amp; Shoulders Active Cleanse">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/cwgK9E8ZNSE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/cwgK9E8ZNSE/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Head &amp; Shoulders Active Cleanse</h3>
                                         <p class="otg-work__meta">TV commercial · 20s · English</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=DtJJMJvLfkU" aria-label="Play video: The New Head &amp; Shoulders Active Cleanse Music Video">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=DtJJMJvLfkU"
+                                        aria-label="Play video: The New Head &amp; Shoulders Active Cleanse Music Video">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/DtJJMJvLfkU/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/DtJJMJvLfkU/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
-                                        <h3 class="otg-work__title">The New Head &amp; Shoulders Active Cleanse Music Video</h3>
+                                        <h3 class="otg-work__title">The New Head &amp; Shoulders Active Cleanse Music
+                                            Video</h3>
                                         <p class="otg-work__meta">Branded music video</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=9bKufySMzVM" aria-label="Play video: Star Sports: Toofani T20Is Loading!">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=9bKufySMzVM"
+                                        aria-label="Play video: Star Sports: Toofani T20Is Loading!">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/9bKufySMzVM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/9bKufySMzVM/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Star Sports: Toofani T20Is Loading!</h3>
                                         <p class="otg-work__meta">TV &amp; digital promo · India vs West Indies</p>
@@ -428,45 +613,71 @@
                             </div>
                         </div>
 
-                        <div class="otg-tabpanel" role="tabpanel" id="japan-long-formats" aria-labelledby="tab-japan-long-formats" tabindex="0" hidden>
+                        <div class="otg-tabpanel" role="tabpanel" id="japan-long-formats"
+                            aria-labelledby="tab-japan-long-formats" tabindex="0" hidden>
                             <h2 class="visually-hidden">Japan: Long Formats</h2>
-                            <p class="otg-tabpanel__note">Feature films directed by Anshul Chauhan, our partner in Tokyo.</p>
+                            <p class="otg-tabpanel__note">Feature films directed by Anshul Chauhan, our partner in
+                                Tokyo.</p>
                             <div class="otg-works__grid">
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=P7TzFlEQAEQ" aria-label="Play video: Tiger">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=P7TzFlEQAEQ"
+                                        aria-label="Play video: Tiger">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/P7TzFlEQAEQ/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/P7TzFlEQAEQ/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Tiger</h3>
                                         <p class="otg-work__meta">Feature film · Festival teaser</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=FeqS52WmrGk" aria-label="Play video: December">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=FeqS52WmrGk"
+                                        aria-label="Play video: December">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/FeqS52WmrGk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/FeqS52WmrGk/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">December</h3>
                                         <p class="otg-work__meta">Feature film · 2022 · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=2jxtxWdNuB0" aria-label="Play video: Kontora">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=2jxtxWdNuB0"
+                                        aria-label="Play video: Kontora">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/2jxtxWdNuB0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/2jxtxWdNuB0/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Kontora</h3>
                                         <p class="otg-work__meta">Feature film · 2019 · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=7iCj8UeKPYM" aria-label="Play video: Bad Poetry Tokyo">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=7iCj8UeKPYM"
+                                        aria-label="Play video: Bad Poetry Tokyo">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/7iCj8UeKPYM/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/7iCj8UeKPYM/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Bad Poetry Tokyo</h3>
                                         <p class="otg-work__meta">Feature film · 2017 · Trailer</p>
@@ -475,45 +686,71 @@
                             </div>
                         </div>
 
-                        <div class="otg-tabpanel" role="tabpanel" id="japan-shorts" aria-labelledby="tab-japan-shorts" tabindex="0" hidden>
+                        <div class="otg-tabpanel" role="tabpanel" id="japan-shorts" aria-labelledby="tab-japan-shorts"
+                            tabindex="0" hidden>
                             <h2 class="visually-hidden">Japan: Shorts</h2>
-                            <p class="otg-tabpanel__note">Short films by Anshul Chauhan, from his Tokyo company Kowatanda Films.</p>
+                            <p class="otg-tabpanel__note">Short films by Anshul Chauhan, from his Tokyo company
+                                Kowatanda Films.</p>
                             <div class="otg-works__grid">
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=GN7eNQergN0" aria-label="Play video: Leo&#x27;s Return">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=GN7eNQergN0"
+                                        aria-label="Play video: Leo&#x27;s Return">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/GN7eNQergN0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/GN7eNQergN0/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Leo&#x27;s Return</h3>
                                         <p class="otg-work__meta">Short film · 2021 · Full film</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=ky4ZFpP5BSw" aria-label="Play video: Kawaguchi-4256">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=ky4ZFpP5BSw"
+                                        aria-label="Play video: Kawaguchi-4256">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/ky4ZFpP5BSw/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/ky4ZFpP5BSw/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Kawaguchi-4256</h3>
                                         <p class="otg-work__meta">Short film · Trailer</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=0JBGM2X2ZQE" aria-label="Play video: What&#x27;s Left of Us">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=0JBGM2X2ZQE"
+                                        aria-label="Play video: What&#x27;s Left of Us">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/0JBGM2X2ZQE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/0JBGM2X2ZQE/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">What&#x27;s Left of Us</h3>
                                         <p class="otg-work__meta">Short film · Teaser</p>
                                     </a>
                                 </article>
                                 <article class="otg-work">
-                                    <a class="otg-work__link popup-video" href="https://www.youtube.com/watch?v=38lhsfai8g4" aria-label="Play video: Soap">
+                                    <a class="otg-work__link popup-video"
+                                        href="https://www.youtube.com/watch?v=38lhsfai8g4"
+                                        aria-label="Play video: Soap">
                                         <span class="otg-work__thumb">
-                                            <img src="https://i.ytimg.com/vi/38lhsfai8g4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
-                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L19 11L1 21V1Z" fill="currentColor" /></svg></span>
+                                            <img src="https://i.ytimg.com/vi/38lhsfai8g4/hqdefault.jpg" alt=""
+                                                width="480" height="360" loading="lazy" decoding="async">
+                                            <span class="otg-work__play"><svg width="20" height="22" viewBox="0 0 20 22"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M1 1L19 11L1 21V1Z" fill="currentColor" />
+                                                </svg></span>
                                         </span>
                                         <h3 class="otg-work__title">Soap</h3>
                                         <p class="otg-work__meta">Short film · Festival teaser</p>
@@ -545,7 +782,8 @@
                             <!-- Brand -->
                             <div class="col-12">
                                 <div class="footer-11__brand">
-                                    <a href="index.html" class="d-inline-flex align-items-center text-decoration-none mb-3">
+                                    <a href="index.html"
+                                        class="d-inline-flex align-items-center text-decoration-none mb-3">
                                         <span class="h4 fw-700 text-white mb-0">On The Go Films</span>
                                     </a>
                                     <p class="neutral-400 fz-font-lg mb-4" style="max-width: 380px;">
@@ -553,8 +791,10 @@
                                         Driven by stories, powered by motion.
                                     </p>
                                     <p class="footer-11__contact-line mb-0">
-                                        <a href="mailto:Onthegofilmsfinance@gmail.com" class="text-white text-decoration-none">
-                                            <i class="fa-light fa-envelope me-2 text-white-50" aria-hidden="true"></i>Onthegofilmsfinance@gmail.com
+                                        <a href="mailto:Onthegofilmsfinance@gmail.com"
+                                            class="text-white text-decoration-none">
+                                            <i class="fa-light fa-envelope me-2 text-white-50"
+                                                aria-hidden="true"></i>Onthegofilmsfinance@gmail.com
                                         </a>
                                     </p>
                                 </div>
@@ -565,16 +805,25 @@
                                 <h2 class="h6 text-uppercase neutral-500 fw-600 mb-25">Our Offices</h2>
                                 <ul class="otg-offices list-unstyled mb-0">
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Tokyo, Japan</p>
-                                        <p class="otg-office__addr"><span class="d-block">14-504, Akatsuka Shinmachi 3-32,</span><span class="d-block">Itabashi-ku,</span><span class="d-block">Tokyo 175-0093, Japan</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Tokyo, Japan</p>
+                                        <p class="otg-office__addr"><span class="d-block">14-504, Akatsuka Shinmachi
+                                                3-32,</span><span class="d-block">Itabashi-ku,</span><span
+                                                class="d-block">Tokyo 175-0093, Japan</span></p>
                                     </li>
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Mumbai, India</p>
-                                        <p class="otg-office__addr"><span class="d-block">A-704, Vaishali Nagar, Saat Rasta,</span><span class="d-block">Mahalaxmi East, Mumbai – 400011,</span><span class="d-block">Maharashtra, India</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Mumbai, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">A-704, Vaishali Nagar, Saat
+                                                Rasta,</span><span class="d-block">Mahalaxmi East, Mumbai –
+                                                400011,</span><span class="d-block">Maharashtra, India</span></p>
                                     </li>
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Jaipur, India</p>
-                                        <p class="otg-office__addr"><span class="d-block">92, Rajive Vihar, New Sanganer Road,</span><span class="d-block">Rajat Path, Mansarovar,</span><span class="d-block">Jaipur, Rajasthan, India</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Jaipur, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">92, Rajive Vihar, New Sanganer
+                                                Road,</span><span class="d-block">Rajat Path, Mansarovar,</span><span
+                                                class="d-block">Jaipur, Rajasthan, India</span></p>
                                     </li>
                                 </ul>
                             </div>
@@ -583,10 +832,12 @@
 
                     <!-- Bottom bar -->
                     <div class="footer-11__bottom">
-                        <div class="footer-11__bottom-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div
+                            class="footer-11__bottom-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div class="d-flex flex-wrap align-items-center gap-3 gap-xxl-4">
                                 <span class="footer-11__copy">On The Go Films &copy; 2026. All rights reserved.</span>
-                                <span class="footer-11__tagline d-none d-sm-inline">Built for the fast forward generation</span>
+                                <span class="footer-11__tagline d-none d-sm-inline">Built for the fast forward
+                                    generation</span>
                             </div>
                         </div>
                     </div>
@@ -599,8 +850,10 @@
     <!-- back to top start -->
     <div class="back-to-top-wrapper">
         <button id="back_to_top" type="button" class="back-to-top-btn" aria-label="Back to top">
-            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
             </svg>
         </button>
     </div>

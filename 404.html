@@ -7,10 +7,11 @@
     <base href="/">
     <!-- Theme: dark by default; remember the visitor's choice across pages (runs before paint, so no flash) -->
     <script>
-        (function () { try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-bs-theme', 'light'); } catch (e) {} })();
+        (function () { try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-bs-theme', 'light'); } catch (e) { } })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This page doesn&#x27;t exist. Visit the On The Go Films home page, works or contact page.">
+    <meta name="description"
+        content="This page doesn&#x27;t exist. Visit the On The Go Films home page, works or contact page.">
     <meta name="theme-color" content="#0F0F0F">
     <title>Page not found | On The Go Films</title>
     <!-- Open Graph / social sharing -->
@@ -18,8 +19,9 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="On The Go Films">
     <meta property="og:title" content="Page not found | On The Go Films">
-    <meta property="og:description" content="This page doesn&#x27;t exist. Visit the On The Go Films home page, works or contact page.">
-    <meta property="og:image" content="assets/imgs/pages/home-11/hns-active-cleanse-mv.jpg">
+    <meta property="og:description"
+        content="This page doesn&#x27;t exist. Visit the On The Go Films home page, works or contact page.">
+    <meta property="og:image" content="assets/imgs/og.png">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Favicon icon-->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/template/logo/favicon-camera-32.png">
@@ -57,14 +59,19 @@
                     <li><a class="otg-nav__link" href="index.html">Home</a></li>
                     <li><a class="otg-nav__link" href="team.html">Our Team</a></li>
                     <li class="otg-nav__item--dd">
-                        <a class="otg-nav__link" href="works.html">Works <i class="fa-light fa-angle-down" aria-hidden="true"></i></a>
+                        <a class="otg-nav__link" href="works.html">Works <i class="fa-light fa-angle-down"
+                                aria-hidden="true"></i></a>
                         <ul class="otg-nav__sub" aria-label="Works categories">
                             <li class="otg-nav__sub-group" aria-hidden="true">India</li>
-                            <li><a href="works.html#india-long-formats"><span class="visually-hidden">India: </span>Long Formats</a></li>
-                            <li><a href="works.html#india-commercials"><span class="visually-hidden">India: </span>Commercials</a></li>
+                            <li><a href="works.html#india-long-formats"><span class="visually-hidden">India: </span>Long
+                                    Formats</a></li>
+                            <li><a href="works.html#india-commercials"><span class="visually-hidden">India:
+                                    </span>Commercials</a></li>
                             <li class="otg-nav__sub-group" aria-hidden="true">Japan</li>
-                            <li><a href="works.html#japan-long-formats"><span class="visually-hidden">Japan: </span>Long Formats</a></li>
-                            <li><a href="works.html#japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</a></li>
+                            <li><a href="works.html#japan-long-formats"><span class="visually-hidden">Japan: </span>Long
+                                    Formats</a></li>
+                            <li><a href="works.html#japan-shorts"><span class="visually-hidden">Japan: </span>Shorts</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="otg-nav__link" href="services.html">Services</a></li>
@@ -74,10 +81,12 @@
 
             <div class="otg-header__actions">
                 <!-- Instagram profile URL: INSTAGRAM_URL in src/build.py -->
-                <a class="otg-icon-btn otg-header__insta" href="https://www.instagram.com/onthegofilms2026/" target="_blank" rel="noopener" aria-label="On The Go Films on Instagram">
+                <a class="otg-icon-btn otg-header__insta" href="https://www.instagram.com/onthegofilms2026/"
+                    target="_blank" rel="noopener" aria-label="On The Go Films on Instagram">
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </a>
-                <button class="otg-icon-btn otg-theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">
+                <button class="otg-icon-btn otg-theme-toggle" type="button" data-theme-toggle
+                    aria-label="Switch to light mode">
                     <i class="fa-light fa-sun otg-theme-toggle__sun" aria-hidden="true"></i>
                     <i class="fa-light fa-moon otg-theme-toggle__moon" aria-hidden="true"></i>
                 </button>
@@ -87,7 +96,8 @@
                         <span class="text-2">Let's Connect</span>
                     </span>
                 </a>
-                <button class="otg-icon-btn otg-burger" type="button" aria-expanded="false" aria-controls="otg-mnav" aria-label="Open menu">
+                <button class="otg-icon-btn otg-burger" type="button" aria-expanded="false" aria-controls="otg-mnav"
+                    aria-label="Open menu">
                     <span class="otg-burger__lines" aria-hidden="true"><span></span><span></span><span></span></span>
                 </button>
             </div>
@@ -135,11 +145,15 @@
                             <span class="sec-5-home-11__eyebrow-text text-uppercase">Error 404</span>
                         </div>
                         <h1 class="sec-contact__title mt-3 mb-0" id="nf-title">This page isn't here.</h1>
-                        <p class="sec-contact__intro mt-4">The link may be broken or the page may have moved. Try one of these instead:</p>
+                        <p class="sec-contact__intro mt-4">The link may be broken or the page may have moved. Try one of
+                            these instead:</p>
                         <div class="d-flex flex-wrap gap-3 mt-4">
-                            <a class="at-btn otg-cta-primary" href="index.html"><span><span class="text-1">Go to Home</span><span class="text-2">Go to Home</span></span></a>
-                            <a class="at-btn" href="works.html"><span><span class="text-1">See our Works</span><span class="text-2">See our Works</span></span></a>
-                            <a class="at-btn" href="contact.html"><span><span class="text-1">Contact Us</span><span class="text-2">Contact Us</span></span></a>
+                            <a class="at-btn otg-cta-primary" href="index.html"><span><span class="text-1">Go to
+                                        Home</span><span class="text-2">Go to Home</span></span></a>
+                            <a class="at-btn" href="works.html"><span><span class="text-1">See our Works</span><span
+                                        class="text-2">See our Works</span></span></a>
+                            <a class="at-btn" href="contact.html"><span><span class="text-1">Contact Us</span><span
+                                        class="text-2">Contact Us</span></span></a>
                         </div>
                     </div>
                 </section>
@@ -165,7 +179,8 @@
                             <!-- Brand -->
                             <div class="col-12">
                                 <div class="footer-11__brand">
-                                    <a href="index.html" class="d-inline-flex align-items-center text-decoration-none mb-3">
+                                    <a href="index.html"
+                                        class="d-inline-flex align-items-center text-decoration-none mb-3">
                                         <span class="h4 fw-700 text-white mb-0">On The Go Films</span>
                                     </a>
                                     <p class="neutral-400 fz-font-lg mb-4" style="max-width: 380px;">
@@ -173,8 +188,10 @@
                                         Driven by stories, powered by motion.
                                     </p>
                                     <p class="footer-11__contact-line mb-0">
-                                        <a href="mailto:Onthegofilmsfinance@gmail.com" class="text-white text-decoration-none">
-                                            <i class="fa-light fa-envelope me-2 text-white-50" aria-hidden="true"></i>Onthegofilmsfinance@gmail.com
+                                        <a href="mailto:Onthegofilmsfinance@gmail.com"
+                                            class="text-white text-decoration-none">
+                                            <i class="fa-light fa-envelope me-2 text-white-50"
+                                                aria-hidden="true"></i>Onthegofilmsfinance@gmail.com
                                         </a>
                                     </p>
                                 </div>
@@ -185,16 +202,25 @@
                                 <h2 class="h6 text-uppercase neutral-500 fw-600 mb-25">Our Offices</h2>
                                 <ul class="otg-offices list-unstyled mb-0">
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Tokyo, Japan</p>
-                                        <p class="otg-office__addr"><span class="d-block">14-504, Akatsuka Shinmachi 3-32,</span><span class="d-block">Itabashi-ku,</span><span class="d-block">Tokyo 175-0093, Japan</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Tokyo, Japan</p>
+                                        <p class="otg-office__addr"><span class="d-block">14-504, Akatsuka Shinmachi
+                                                3-32,</span><span class="d-block">Itabashi-ku,</span><span
+                                                class="d-block">Tokyo 175-0093, Japan</span></p>
                                     </li>
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Mumbai, India</p>
-                                        <p class="otg-office__addr"><span class="d-block">A-704, Vaishali Nagar, Saat Rasta,</span><span class="d-block">Mahalaxmi East, Mumbai – 400011,</span><span class="d-block">Maharashtra, India</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Mumbai, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">A-704, Vaishali Nagar, Saat
+                                                Rasta,</span><span class="d-block">Mahalaxmi East, Mumbai –
+                                                400011,</span><span class="d-block">Maharashtra, India</span></p>
                                     </li>
                                     <li class="otg-office">
-                                        <p class="otg-office__city"><i class="fa-light fa-location-dot" aria-hidden="true"></i>Jaipur, India</p>
-                                        <p class="otg-office__addr"><span class="d-block">92, Rajive Vihar, New Sanganer Road,</span><span class="d-block">Rajat Path, Mansarovar,</span><span class="d-block">Jaipur, Rajasthan, India</span></p>
+                                        <p class="otg-office__city"><i class="fa-light fa-location-dot"
+                                                aria-hidden="true"></i>Jaipur, India</p>
+                                        <p class="otg-office__addr"><span class="d-block">92, Rajive Vihar, New Sanganer
+                                                Road,</span><span class="d-block">Rajat Path, Mansarovar,</span><span
+                                                class="d-block">Jaipur, Rajasthan, India</span></p>
                                     </li>
                                 </ul>
                             </div>
@@ -203,10 +229,12 @@
 
                     <!-- Bottom bar -->
                     <div class="footer-11__bottom">
-                        <div class="footer-11__bottom-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div
+                            class="footer-11__bottom-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div class="d-flex flex-wrap align-items-center gap-3 gap-xxl-4">
                                 <span class="footer-11__copy">On The Go Films &copy; 2026. All rights reserved.</span>
-                                <span class="footer-11__tagline d-none d-sm-inline">Built for the fast forward generation</span>
+                                <span class="footer-11__tagline d-none d-sm-inline">Built for the fast forward
+                                    generation</span>
                             </div>
                         </div>
                     </div>
@@ -219,8 +247,10 @@
     <!-- back to top start -->
     <div class="back-to-top-wrapper">
         <button id="back_to_top" type="button" class="back-to-top-btn" aria-label="Back to top">
-            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
             </svg>
         </button>
     </div>
